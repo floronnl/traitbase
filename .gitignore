@@ -1,0 +1,16 @@
+# Ignore sensitive files
+appsettings.json
+appsettings.Development.json
+
+# Ignore build artifacts
+bin/
+obj/
+
+# Ignore user-specific files
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Ignore temporary files
+*.log
