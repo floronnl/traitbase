@@ -1,0 +1,106 @@
+﻿
+/* #FF8040 orange */
+/* #dcdad7 lightgray */
+
+/* Load the custom font */
+@font-face {
+    font-family: 'amaranthregular';
+    src: url('/fonts/Amaranth-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    line-height: 25px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    background-color: #f3f3f3;
+}
+
+/* Swagger UI top bar */
+.swagger-ui .topbar {
+    display: none;
+    background-color: #FF8040;
+    border: black;
+}
+
+.swagger-ui .auth-wrapper {
+  background-color: white;
+  border: black;
+  color: black;
+}
+
+.swagger-ui .info .title {
+    color: #3b4151;
+    font-family: 'amaranthregular';
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Information container (intro section) */
+.swagger-ui .information-container {
+    background-color: #f3f3f3;
+    color: black; /* White text */
+    margin: 0px 0px 0px 0;
+}
+
+.swagger-ui .scheme-container {
+  background-color: #FF8040;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+}
+
+.swagger-ui .scheme-container .schemes {
+  background-color: #FF8040;
+  margin: 0px 0px 0px 0;
+}
+
+/* Button styles */
+.swagger-ui .btn {
+    background-color: #f3f3f3;
+    color: black; /* White button text */
+    border: black;
+    border-radius: 5px;
+}
+
+.swagger-ui .btn:hover {
+    background-color: #dcdad7; /* Darker green for hover */
+}
+
+/* HTTP method buttons */
+.swagger-ui .opblock.opblock-get {
+    background-color: white; /* Light blue for GET */
+    border-color: black; /* Slightly darker border */
+}
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+    background-color: #FF8040;
+    border-color: #FF8040;
+}
+
+/* Scheme dropdown */
+.swagger-ui .scheme-container {
+    color: #333; /* Dark gray text */
+}
+
+/* Input fields */
+.swagger-ui input[type="text"], .swagger-ui textarea {
+    background-color: #ffffff; /* White fields */
+    border: 1px solid #cccccc; /* Light gray border */
+    border-radius: 3px;
+}
+
+/* Responses table */
+.swagger-ui .responses-table tr {
+    background-color: #f9f9f9; /* Light gray rows */
+}
+
+.swagger-ui .responses-table tr:nth-child(even) {
+    background-color: #ffffff; /* Alternate white rows */
+}
+
+.swagger-ui .responses-table th {
+    background-color: black; /* Dark green headers */
+    color: white;
+    padding: 10px;
+}
