@@ -14,7 +14,7 @@ namespace biobase.API.Repositories
         }
 
         // GET ALL TRAITS CATEGORIES
-        public async Task<List<TraitsCategories>> GetAllTraitsCategoriesAsync(string taxon_class)
+        public async Task<List<TraitsCategories>> GetAllTraitsCategoriesAsync(string? taxon_class = null)
         {
             var traitsCategoryQuery = _dbContext.traits_categories.AsQueryable();
 
@@ -22,7 +22,8 @@ namespace biobase.API.Repositories
             if (!string.IsNullOrWhiteSpace(taxon_class))
             {
                 traitsCategoryQuery = traitsCategoryQuery.Where(x => 
-                x.soortgroep.Equals(taxon_class, StringComparison.OrdinalIgnoreCase));
+                x.soortgroep.Equals(taxon_class, StringComparison.OrdinalIgnoreCase) || x.soortgroep.Equals(null)
+                );
             }
             return await traitsCategoryQuery.ToListAsync();
         }

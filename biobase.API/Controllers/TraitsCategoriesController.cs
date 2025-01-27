@@ -34,7 +34,7 @@ namespace biobase.API.Controllers
         /// The result is returned as a downloadable CSV file or JSON.
         /// </summary>
         /// <param name="taxon_class">
-        /// Required filter for trait categories belonging to a specific taxa class (e.g. 'V' for vascular plants or 'R' for reptiles).
+        /// Optional filter for trait categories belonging to a specific taxa class (e.g. 'V' for vascular plants or 'R' for reptiles).
         /// </param>
         /// <param name="format">
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
@@ -48,7 +48,8 @@ namespace biobase.API.Controllers
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetAll(
-            [FromQuery, Required(ErrorMessage = "Taxon class is a required parameter.")] string taxon_class, [FromQuery] string format = "csv")
+            [FromQuery] string? taxon_class,
+            [FromQuery] string format = "csv")
         {
             try
             {
