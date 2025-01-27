@@ -15,6 +15,6 @@ namespace biobase.API.Models.DTO
         public string? description { get; set; }
         public string? description_short { get; set; }
         public string? project { get; set; }
-        public bool? project_order { get; set; }
+        public string? project_order { get; set; }
     }
 }
