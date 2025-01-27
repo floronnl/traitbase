@@ -8,10 +8,10 @@ namespace biobase.API.Models.DTO
         public string? habitat_description { get; set; }
         public string? taxon_category { get; set; }
         public string? extra_info { get; set; }
-        public string? wetnaam { get; set; }
-        public string? nednaam { get; set; }
-        public string? rl { get; set; }
+        public string? sci_name { get; set; }
+        public string? nl_name { get; set; }
+        public string? red_list_status { get; set; }
         public string? identity { get; set; }
-        public string? soortgroep { get; set; }
+       public string? taxon_class { get; set; }
     }
 }

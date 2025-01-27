@@ -18,11 +18,11 @@ namespace biobase.API.Models.Domain
         public string? soortcode { get; set; }
         public int? acc { get; set; }
         public string? german { get; set; }
-        public int? jaar { get; set; }
+        public string? jaar { get; set; }
         public string? auteur { get; set; }
         public string? english { get; set; }
-        public bool niet_publiek { get; set; }
-        public bool deleted { get; set; }
+        public int? niet_publiek { get; set; }
+        public string? deleted { get; set; }
         public DateTime updated { get; set; }
     }
 }
