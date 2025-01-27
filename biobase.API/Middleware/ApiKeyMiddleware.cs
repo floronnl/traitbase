@@ -45,21 +45,21 @@ namespace biobase.API.Middleware
 
 
             // TraitsCategories: check for specific API key
-            if (context.Request.Path.StartsWithSegments("/api/TraitsCategories", StringComparison.OrdinalIgnoreCase))
-            {
-                var traitsCategoriesApiKey = _configuration["ApiKeys:TraitsCategoriesControllerApiKey"]; // Get specific key from config
-
-                if (!context.Request.Headers.TryGetValue(ApiKeyHeaderName, out var providedApiKey) || providedApiKey != traitsCategoriesApiKey)
-                {
-                    _logger.LogWarning("Unauthorized access to TraitsCategories");
-                    context.Response.StatusCode = 403; // Forbidden
-                    await context.Response.WriteAsync("Unauthorized access to TraitsCategories");
-                    return;
-                }
-
-                await _next(context); // Allow access for valid API key
-                return;
-            }
+        //    if (context.Request.Path.StartsWithSegments("/api/TraitsCategories", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        var traitsCategoriesApiKey = _configuration["ApiKeys:TraitsCategoriesControllerApiKey"]; // Get specific key from config
+        //
+        //        if (!context.Request.Headers.TryGetValue(ApiKeyHeaderName, out var providedApiKey) || providedApiKey != traitsCategoriesApiKey)
+        //        {
+        //            _logger.LogWarning("Unauthorized access to TraitsCategories");
+        //            context.Response.StatusCode = 403; // Forbidden
+        //            await context.Response.WriteAsync("Unauthorized access to TraitsCategories");
+        //            return;
+        //        }
+        //
+        //        await _next(context); // Allow access for valid API key
+        //        return;
+        //    }
 
             // General API key validation for other endpoints
             if (!context.Request.Headers.TryGetValue(ApiKeyHeaderName, out var potentialApiKey))
