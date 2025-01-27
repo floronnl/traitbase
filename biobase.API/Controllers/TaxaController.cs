@@ -47,7 +47,7 @@ namespace biobase.API.Controllers
         [HttpGet]
         [SwaggerOperation(
             Tags = new[] { "2. Taxa" },
-            Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group. The response format can be CSV or JSON.")]
+            Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of taxa was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]

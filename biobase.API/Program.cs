@@ -30,9 +30,13 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
-        Title = "Traitbase",
+        Title = "Traitbase API",
         Version = "v1",
-        Description = "Traitbase: API for accessing Taxa-Traits information"
+        Description = "**About Traitbase:**\n\n" +
+        "This API supports various filters and output formats to retrieve data on habitat types, taxa and species traits and protection status in The Netherlands.\n\n" +
+        "For some endpoints an API key is required. An API key can be requested by creating an account at [NDFF Verspreidingsatlas](https://www.verspreidingsatlas.nl). " +
+        "This API was developed by FLORON Plant Conservation Netherlands with support of Wageningen University and Research (WUR), " +
+        "Statistics Netherlands (CBS), Dutch Bryological and Lichenological Society (BLWG), Dutch Mycological Society (NMV).",
     });
 
     // Add XML comments to Swagger for better documentation

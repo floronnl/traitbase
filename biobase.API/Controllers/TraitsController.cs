@@ -42,7 +42,7 @@ namespace biobase.API.Controllers
         [SwaggerOperation(
             Tags = new[] { "4.1 Species traits" },
             Summary = "Get all traits for one species",
-            Description = "Retrieve a list of all traits for one species. The response format can be CSV or JSON.")]
+            Description = "Retrieve a list of all traits for one species.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of species traits was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(404, "No data found for the specified species ID.")]
@@ -97,7 +97,7 @@ namespace biobase.API.Controllers
         [SwaggerOperation(
             Tags = new[] { "4.2 Traits table for plants, mosses, lichens, and stoneworts" },
             Summary = "Get a pivot table with traits for all vascular plants, mosses, lichens, and stoneworts",
-            Description = "Retrieve a table with all traits for vascular plants, mosses, lichens, and stoneworts. The response format can be CSV or JSON.")]
+            Description = "Retrieve a table with all traits for vascular plants, mosses, lichens, and stoneworts.  \nNo API key is required to access this endpoint.The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of species traits was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]

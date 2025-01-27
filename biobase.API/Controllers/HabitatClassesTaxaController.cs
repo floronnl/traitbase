@@ -53,7 +53,7 @@ namespace biobase.API.Controllers
         [HttpGet]
         [SwaggerOperation(
             Tags = new[] { "1. Habitat classes Taxa" },
-            Summary = "Get Habitat-Species data", Description = "Retrieve a habitat class and the associated species (or vice versa). The response format can be CSV or JSON.")]
+            Summary = "Get Habitat-Species data", Description = "Retrieve a habitat class and the associated species (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
