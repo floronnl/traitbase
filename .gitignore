@@ -1,16 +1,49 @@
-# Ignore sensitive files
+# Ignore sensitive configuration files
 appsettings.json
 appsettings.Development.json
+appsettings.Production.json
+appsettings.*.json
+
+# Ignore user-specific files
+*.user
+*.suo
+.vscode/
+.idea/
 
 # Ignore build artifacts
 bin/
 obj/
+debug/
+release/
 
-# Ignore user-specific files
-.vscode/
-.idea/
-*.user
-*.suo
-
-# Ignore temporary files
+# Ignore temporary or log files
 *.log
+*.tlog
+*.pid
+*.cache
+*.db
+*.tmp
+
+# Ignore NuGet-related files
+*.nupkg
+packages/
+project.lock.json
+
+# Ignore database files
+*.mdf
+*.ldf
+*.sqlite
+*.sql
+
+# Ignore publish outputs
+publish/
+wwwroot/
+
+# Ignore generated files
+Generated_Code/
+
+# Ignore Rider IDE settings
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/
