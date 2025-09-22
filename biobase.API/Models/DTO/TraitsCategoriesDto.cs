@@ -5,12 +5,12 @@ namespace biobase.API.Models.DTO
     public class TraitsCategoriesDto
     {
         [Key]
-        public int category_id { get; set; }
-        public string? category_name { get; set; }
-        public string? taxon_class { get; set; }
-        public string? datatype { get; set; }
-        public string? default_copyright { get; set; }
-        public string? source { get; set; }
-        public string? description { get; set; }
+        public int CategoryId { get; set; }
+        public string? CategoryName { get; set; }
+        public string? TaxaGroup { get; set; }
+        public string? DataType { get; set; }
+        public string? DefaultCopyright { get; set; }
+        public string? Source { get; set; }
+        public string? Description { get; set; }
     }
 }

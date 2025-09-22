@@ -26,24 +26,72 @@ namespace biobase.API.Controllers
             _csvExportService = csvExportService;
             _logger = logger;
         }
+        /// <summary>
+        /// Retrieves data on habitat classes and associated taxa
+        /// At least one of the filters below must be specified.
+        /// </summary>
+        /// <param name="habitatClassification">
+        /// Optional filter for habitat classification: 'beheertype', 'cultuurdoeltype', 'habitattype' of 'natuurdoeltype'.
+        /// </param>
+        /// <param name="format">
+        /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
+        [HttpGet("habitatCodes")]
+        [SwaggerOperation(
+            Tags = new[] { "1.1 Habitat codes" },
+            Summary = "Get habitat codes data", Description = "Retrieve a list of all habitat codes with an optional filter for habitat classification.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
+        [SwaggerResponse(200, "The data was successfully retrieved.")]
+        [SwaggerResponse(401, "API Key is missing or invalid.")]
+        [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
+        [SwaggerResponse(500, "An error occurred while processing your request.")]
+        public async Task<IActionResult> GetHabitatCodes(
+            [FromQuery] string? habitatClassification,
+            [FromQuery] string format = "csv")
+        {
+            try
+            {
+                var habitat_codes = await _repository.GetHabitatCodesAsync(habitatClassification);
+                var habitatDto = _mapper.Map<List<HabitatCodesDto>>(habitat_codes);
+
+                if (format.ToLower() == "json")
+                {
+                    return Ok(habitatDto);
+                }
+                else if (format.ToLower() == "csv")
+                {
+                    var csvData = await _csvExportService.ExportToCsvAsync(habitatDto);
+                    return File(csvData, "text/csv", $"traitbase_export_habitatcodes_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                }
+                else
+                {
+                    return BadRequest("Unsupported format. Please use 'csv' or 'json'.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while getting habitat codes.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
 
         /// <summary>
         /// Retrieves data on habitat classes and associated taxa
         /// At least one of the filters below must be specified.
         /// </summary>
-        /// <param name="habitat_classification">
-        /// Filter for habitat classes (e.g. 'beheertype' or 'natuurdoeltype').
+        /// <param name="habitatClassification">
+        /// Filter for habitat classes: 'beheertype', 'cultuurdoeltype', 'habitattype' of 'natuurdoeltype'.
         /// </param>
-        /// <param name="habitat_code">
+        /// <param name="habitatCode">
         /// Filter for habitat code (e.g. '3.46' or 'N15.01').
         /// </param>
-        /// <param name="taxon_category">
+        /// <param name="taxonCategory">
         /// Filter for taxon category (e.g. 'snlsoort' or 'typischesoort').
         /// </param>
-        /// <param name="rl">
+        /// <param name="threatStatus">
         /// Filter for Red List status. Use the Dutch abbreviations (e.g. 'BE' or 'KW'). 
         /// </param>
-        /// <param name="taxon_class">
+        /// <param name="taxonGroup">
         /// Filter for taxon class. Use the Dutch names (e.g. 'Vaatplanten' or 'Libellen').
         /// </param>
         /// <param name="format">
@@ -52,28 +100,28 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
         [HttpGet]
         [SwaggerOperation(
-            Tags = new[] { "1. Habitat classes Taxa" },
+            Tags = new[] { "1.2 Habitat classes - Taxa" },
             Summary = "Get Habitat-Species data", Description = "Retrieve a habitat class and the associated species (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetFiltered(
-            [FromQuery] string? habitat_classification, [FromQuery] string? habitat_code, 
-            [FromQuery] string? taxon_category, [FromQuery] string? rl, [FromQuery] string? taxon_class, 
+            [FromQuery] string? habitatClassification, [FromQuery] string? habitatCode, 
+            [FromQuery] string? taxonCategory, [FromQuery] string? threatStatus, [FromQuery] string? taxonGroup, 
             [FromQuery] string format = "csv")
         {
             try
             {
                 // Ensure at least one filter is provided
-                if (string.IsNullOrEmpty(habitat_classification) && string.IsNullOrEmpty(habitat_code) &&
-                    string.IsNullOrEmpty(taxon_category) && string.IsNullOrEmpty(rl) &&
-                    string.IsNullOrEmpty(taxon_class))
+                if (string.IsNullOrEmpty(habitatClassification) && string.IsNullOrEmpty(habitatCode) &&
+                    string.IsNullOrEmpty(taxonCategory) && string.IsNullOrEmpty(threatStatus) &&
+                    string.IsNullOrEmpty(taxonGroup))
                 {
                     return BadRequest("At least one filter must be specified.");
                 }
 
-                var habitatDomain = await _repository.GetHabitatTaxaAsync(habitat_classification, habitat_code, taxon_category, rl, taxon_class);
+                var habitatDomain = await _repository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxonGroup);
                 var habitatDto = _mapper.Map<List<HabitatClassesTaxaDto>>(habitatDomain);
 
                 if (format.ToLower() == "json")
@@ -83,7 +131,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(habitatDto);
-                    return File(csvData, "text/csv", $"biobase_export_habitat_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"traitbase_export_habitattaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {

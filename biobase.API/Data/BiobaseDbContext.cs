@@ -12,14 +12,15 @@ namespace biobase.API.Data
         public BiobaseDbContext(DbContextOptions<BiobaseDbContext> dbContextOptions) : base(dbContextOptions)
         {
         }
-
         /// <summary>
         /// Gets the tables from the MySQL database.
         /// </summary>
         public DbSet<Taxa> taxa { get; set; }
+        public DbSet<TaxaGroups> taxa_groups { get; set; }
         public DbSet<TraitsCategories> traits_categories { get; set; }
         public DbSet<User> authentication { get; set; }
         public DbSet<HabitatClassesTaxa> habitat_classes_taxa { get; set; }
+        public DbSet<HabitatCodes> habitat_classes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -48,6 +49,12 @@ namespace biobase.API.Data
                 .HasIndex(t => t.groep)
                 .HasDatabaseName("IX_Taxa_Groep")
                 .IsUnique(false);
+
+            modelBuilder.Entity<HabitatCodes>()
+                .HasNoKey();
+
+            modelBuilder.Entity<TaxaGroups>()
+                .HasNoKey();
         }
     }
 }

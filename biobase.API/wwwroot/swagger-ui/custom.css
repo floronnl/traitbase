@@ -21,9 +21,11 @@ body {
 
 /* Swagger UI top bar */
 .swagger-ui .topbar {
-    display: none;
+    display: flex; /* or block */
     background-color: #FF8040;
-    border: black;
+    border: 1px solid black; /* optional */
+    align-items: center; /* vertically center items */
+    padding: 0 10px;
 }
 
 .swagger-ui .auth-wrapper {

@@ -14,13 +14,11 @@ using biobase.API.Services;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Reflection;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
-
-// Registering MVC Controllers
-builder.Services.AddControllers();
 
 // Add Endpoints API Explorer for discovering and exposing APIs
 builder.Services.AddEndpointsApiExplorer();
@@ -36,7 +34,8 @@ builder.Services.AddSwaggerGen(options =>
         "This API supports various filters and output formats to retrieve data on habitat types, taxa and species traits and protection status in The Netherlands.\n\n" +
         "For some endpoints an API key is required. An API key can be requested by creating an account at [NDFF Verspreidingsatlas](https://www.verspreidingsatlas.nl). " +
         "This API was developed by FLORON Plant Conservation Netherlands with support of Wageningen University and Research (WUR), " +
-        "Statistics Netherlands (CBS), Dutch Bryological and Lichenological Society (BLWG), Dutch Mycological Society (NMV).",
+        "Statistics Netherlands (CBS), Dutch Bryological and Lichenological Society (BLWG) and Dutch Mycological Society (NMV).\n\n" +
+        "The source code and technical documentation can be found on [GitHub](https://github.com/floronnl/traitbase).",
     });
 
     // Add XML comments to Swagger for better documentation
@@ -99,6 +98,13 @@ builder.Services.AddScoped<ICsvExportService, CsvExportService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IHabitatClassesTaxaRepository, SQLHabitatClassesTaxaRepository>();
 
+// Registering MVC Controllers
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    });
+
 // Registering AutoMapper profiles for object mapping
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
@@ -125,6 +131,9 @@ app.UseSwaggerUI(options =>
     options.InjectStylesheet("/swagger-ui/custom.css");
     options.DocumentTitle = "Traitbase";
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Traitbase API v1");
+
+    // Inject custom favicon JS
+    options.InjectJavascript("/swagger-ui/custom-favicon.js");
 });
 
 // Redirect HTTP requests to HTTPS

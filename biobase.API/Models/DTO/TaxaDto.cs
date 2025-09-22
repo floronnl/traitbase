@@ -3,18 +3,18 @@ namespace biobase.API.Models.DTO
 {
     public class TaxaDto
     {
-        public int species_id { get; set; }
-        public string? taxon_class { get; set; }
-        public string? sci_name { get; set; }
-        public string? nl_name { get; set; }
-        public string? family { get; set; }
-        public string? label { get; set; }
-        public string? identity { get; set; }
-        public string? red_list_status { get; set; }
-        public string? rareness { get; set; }
-        public string? taxon_subclass{ get; set; }
-        public string? acc {  get; set; }
-        public string? author { get; set; }
-        public DateTime updated { get; set; }
+        public int TaxonId { get; set; }
+        public string? TaxaGroup { get; set; }
+        public string? ScientificName { get; set; }
+        public string? VernacularName { get; set; }
+        public string? Family { get; set; }
+        public string? TaxonLabel { get; set; }
+        public string? NdffIdentity { get; set; }
+        public string? ThreatStatus { get; set; }
+        public string? OccurenceStatus { get; set; }
+        public string? TaxaSubgroup{ get; set; }
+        public string? IsAcceptedName {  get; set; }
+        public string? ScientificNameAuthorship { get; set; }
+        public DateTime Updated { get; set; }
     }
 }

@@ -33,8 +33,8 @@ namespace biobase.API.Controllers
         /// Retrieves a list of traits categories for a specific taxon group.
         /// The result is returned as a downloadable CSV file or JSON.
         /// </summary>
-        /// <param name="taxon_class">
-        /// Optional filter for trait categories belonging to a specific taxa class (e.g. 'V' for vascular plants or 'R' for reptiles).
+        /// <param name="taxaGroup">
+        /// Optional filter for trait categories belonging to a specific taxa group (e.g. 'V' for vascular plants or 'R' for reptiles).
         /// </param>
         /// <param name="format">
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
@@ -43,17 +43,17 @@ namespace biobase.API.Controllers
         [HttpGet]
         [SwaggerOperation(
             Tags = new[] { "3. Traits categories" }, 
-            Summary = "Traits categories for a taxon class", Description = "Retrieve a list of all traits categories for a specific taxon class.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON. ")]
+            Summary = "Traits categories for a taxa group", Description = "Retrieve a list of all traits categories for a specific taxa group.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON. ")]
         [SwaggerResponse(200, "The list of traits categories was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetAll(
-            [FromQuery] string? taxon_class,
+            [FromQuery] string? taxaGroup,
             [FromQuery] string format = "csv")
         {
             try
             {
-                var traitsCategoriesDomain = await _traitsCategoriesRepository.GetAllTraitsCategoriesAsync(taxon_class);
+                var traitsCategoriesDomain = await _traitsCategoriesRepository.GetAllTraitsCategoriesAsync(taxaGroup);
                 var traitsCategoriesDto = _mapper.Map<List<TraitsCategoriesDto>>(traitsCategoriesDomain);
 
                 if (format.ToLower() == "json")
@@ -63,7 +63,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(traitsCategoriesDto);
-                    return File(csvData, "text/csv", $"{DateTime.Now:yyyyMMdd}_traitsCategories_{taxon_class}.csv");
+                    return File(csvData, "text/csv", $"traitbase_export_traitsCategories_{DateTime.Now:yyyyMMdd}.csv");
                 }
                 else
                 {

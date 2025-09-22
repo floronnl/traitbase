@@ -7,5 +7,8 @@ namespace biobase.API.Repositories
         Task<List<HabitatClassesTaxa>> GetHabitatTaxaAsync(
             string? habitat_classification, string? habitat_code, 
             string? taxon_category, string? rl, string? soortgroep);
-    }
+
+        Task<List<HabitatCodes>> GetHabitatCodesAsync(
+        string? habitat_classification = null);
+    };
 }

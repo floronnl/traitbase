@@ -31,35 +31,35 @@ namespace biobase.API.Controllers
         /// Retrieves a list of all traits for one species.
         /// The result is returned as a downloadable CSV file or JSON.
         /// </summary>
-        /// <param name="species_id"> 
-        /// Provide a single species ID. Species IDs correspond to the ones in Verspreidingsatlas.
+        /// <param name="taxonId"> 
+        /// Provide a single taxon ID (soortnummer). Taxon IDs correspond to the ones in Verspreidingsatlas.
         /// </param>
         /// <param name="format">
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the traits data.</returns>
-        [HttpGet]
+        [HttpGet("traitsSingleTaxon")]
         [SwaggerOperation(
-            Tags = new[] { "4.1 Species traits" },
+            Tags = new[] { "4.1 Traits - single taxon" },
             Summary = "Get all traits for one species",
             Description = "Retrieve a list of all traits for one species.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of species traits was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
-        [SwaggerResponse(404, "No data found for the specified species ID.")]
+        [SwaggerResponse(404, "No data found for the specified taxon ID.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetTraitsSingleSpecies(
-            [FromQuery, Required(ErrorMessage = "Species number is a required parameter.")] int species_id,
+            [FromQuery, Required(ErrorMessage = "Taxon ID is a required parameter.")] int taxonId,
             [FromQuery] string format = "csv")
         {
             try
             {
-                if (species_id <= 0)
+                if (taxonId <= 0)
                 {
-                    return BadRequest("The field 'soortnummer' is missing or invalid");
+                    return BadRequest("The field 'taxonId' is missing or invalid.");
                 }
 
                 // Fetch data dynamically from repository
-                var traits = await _traitsRepository.GetTraitsSingleAsync(species_id);
+                var traits = await _traitsRepository.GetTraitsSingleAsync(taxonId);
 
                 if (format.ToLower() == "json")
                 {
@@ -68,10 +68,10 @@ namespace biobase.API.Controllers
                 }
                 else if (format.ToLower() == "csv")
                 {
-                    // Convert dictonary to a list of key-value pairs for CSV export
+                    // Convert dictionary to a list of key-value pairs for CSV export
                     var csvData = await _csvExportService.ExportToCsvAsync(new List<IDictionary<string, object>> { traits });
                     // Return the CSV-file
-                    return File(csvData, "text/csv", $"biobase_export_traits_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"traitbase_export_traits_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace biobase.API.Controllers
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the traits data.</returns>
-        [HttpGet("pivot")]
+        [HttpGet("traitsPivot")]
         [SwaggerOperation(
             Tags = new[] { "4.2 Traits table for plants, mosses, lichens, and stoneworts" },
             Summary = "Get a pivot table with traits for all vascular plants, mosses, lichens, and stoneworts",
@@ -120,7 +120,7 @@ namespace biobase.API.Controllers
                     // Convert dictonary to a list of key-value pairs for CSV export
                     var csvData = await _csvExportService.ExportToCsvAsync(traitsPivot);
                     // Return the CSV-file
-                    return File(csvData, "text/csv", $"biobase_export_traits_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"traitbase_export_traits_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {

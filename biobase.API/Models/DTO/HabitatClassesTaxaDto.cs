@@ -3,15 +3,15 @@ namespace biobase.API.Models.DTO
 {
     public class HabitatClassesTaxaDto
     {
-        public string habitat_classification { get; set; }
-        public string? habitat_code { get; set; }
-        public string? habitat_description { get; set; }
-        public string? taxon_category { get; set; }
-        public string? extra_info { get; set; }
-        public string? sci_name { get; set; }
-        public string? nl_name { get; set; }
-        public string? red_list_status { get; set; }
-        public string? identity { get; set; }
-       public string? taxon_class { get; set; }
+        public string HabitatClassification { get; set; }
+        public string? HabitatCode { get; set; }
+        public string? HabitatDescription { get; set; }
+        public string? TaxonCategory { get; set; }
+        public string? ExtraInfo { get; set; }
+        public string? ScientificName { get; set; }
+        public string? VernacularName { get; set; }
+        public string? ThreatStatus { get; set; }
+        public string? NdffIdentity { get; set; }
+       public string? TaxaGroup { get; set; }
     }
 }

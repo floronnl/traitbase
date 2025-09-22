@@ -44,5 +44,16 @@ namespace biobase.API.Repositories
                 
             return await query.ToListAsync();
         }
+        public async Task<List<HabitatCodes>> GetHabitatCodesAsync(string? habitat_classification = null)
+        {
+            var query = _dbContext.habitat_classes.AsQueryable(); // Target the correct table
+
+            if (!string.IsNullOrWhiteSpace(habitat_classification))
+            {
+                query = query.Where(x => x.habitat_classification == habitat_classification);
+            }
+
+            return await query.ToListAsync();
+        }
     }
 }
