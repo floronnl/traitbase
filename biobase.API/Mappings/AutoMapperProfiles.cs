@@ -26,6 +26,10 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.ScientificNameAuthorship, opt => opt.MapFrom(src => src.auteur))
                 .ForMember(dest => dest.Updated, opt => opt.MapFrom(src => src.updated));
 
+            CreateMap<TaxaGroups, TaxaGroupsDto>()
+                .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.taxa_group))
+                .ForMember(dest => dest.TaxaGroupDescription, opt => opt.MapFrom(src => src.taxa_group_description));
+
 
             // TRAITS CATEGORIES
             CreateMap<TraitsCategories, TraitsCategoriesDto>()
@@ -37,10 +41,16 @@ namespace biobase.API.Mappings
 
             // HABITAT CLASSES TAXA
             CreateMap<HabitatClassesTaxa, HabitatClassesTaxaDto>()
+                .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
+                .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(source => source.habitat_classification))
+                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(source => source.habitat_description))
                 .ForMember(dest => dest.ScientificName, opt => opt.MapFrom(src => src.wetnaam))
                 .ForMember(dest => dest.VernacularName, opt => opt.MapFrom(src => src.nednaam))
                 .ForMember(dest => dest.ThreatStatus, opt => opt.MapFrom(src => src.rl))
-                .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.soortgroep));
+                .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.soortgroep))
+                .ForMember(dest => dest.TaxonCategory, opt => opt.MapFrom(src => src.taxon_category))
+                .ForMember(dest => dest.ExtraInfo, opt => opt.MapFrom(src => src.extra_info))
+                .ForMember(dest => dest.NdffIdentity, opt => opt.MapFrom(src => src.identity));
 
             CreateMap<HabitatCodes, HabitatCodesDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
