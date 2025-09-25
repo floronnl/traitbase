@@ -12,7 +12,7 @@ namespace biobase.API.Controllers
     /// Provides functionality to retrieve traits and export them as CSV or JSON files.
     /// </summary>
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/[controller]")]
+    [Route("api/traits")]
     [ApiController]
     public class TraitsController : ControllerBase
     {

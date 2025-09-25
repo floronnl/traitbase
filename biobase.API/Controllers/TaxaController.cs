@@ -11,7 +11,7 @@ namespace biobase.API.Controllers
     /// Controller to handle API requests for Taxa. Provides endpoints to retrieve and export taxa data as CSV or JSON files.
     /// </summary>
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/[controller]")]
+    [Route("api/taxa")]
     [ApiController]
     public class TaxaController : ControllerBase
     {

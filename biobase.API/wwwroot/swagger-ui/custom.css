@@ -21,7 +21,7 @@ body {
 
 /* Swagger UI top bar */
 .swagger-ui .topbar {
-    display: flex; /* or block */
+    display: none; /* or flex */
     background-color: #FF8040;
     border: 1px solid black; /* optional */
     align-items: center; /* vertically center items */

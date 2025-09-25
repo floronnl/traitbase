@@ -12,7 +12,7 @@ namespace biobase.API.Controllers
     /// Controller to handle API requests for TraitsCategories. Provides endpoints to retrieve and export traits category data as CSV or JSON files.
     /// </summary>
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/[controller]")]
+    [Route("api/traitsCategories")]
     [ApiController]
     public class TraitsCategoriesController : ControllerBase
     {

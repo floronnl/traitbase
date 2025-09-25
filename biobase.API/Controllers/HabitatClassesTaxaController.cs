@@ -10,7 +10,7 @@ using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
 namespace biobase.API.Controllers
 {
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/[controller]")]
+    [Route("api/habitatClassesTaxa")]
     [ApiController]
     public class HabitatClassesTaxaController : ControllerBase
     {
