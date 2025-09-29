@@ -35,15 +35,16 @@ namespace biobase.API.Mappings
             CreateMap<TraitsCategories, TraitsCategoriesDto>()
                 .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.rubriekid))
                 .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.rubriek))
-                .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src =>src.soortgroep))
+                .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.soortgroep))
+                .ForMember(dest => dest.DefaultCopyright, opt => opt.MapFrom(src => src.default_copyright))
                 .ForMember(dest => dest.Source, opt => opt.MapFrom(src => src.bron));
 
 
             // HABITAT CLASSES TAXA
             CreateMap<HabitatClassesTaxa, HabitatClassesTaxaDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
-                .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(source => source.habitat_classification))
-                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(source => source.habitat_description))
+                .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(src => src.habitat_classification))
+                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description))
                 .ForMember(dest => dest.ScientificName, opt => opt.MapFrom(src => src.wetnaam))
                 .ForMember(dest => dest.VernacularName, opt => opt.MapFrom(src => src.nednaam))
                 .ForMember(dest => dest.ThreatStatus, opt => opt.MapFrom(src => src.rl))
@@ -54,10 +55,8 @@ namespace biobase.API.Mappings
 
             CreateMap<HabitatCodes, HabitatCodesDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
-                .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(source => source.habitat_classification))
-                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(source => source.habitat_description));
-
-            CreateMap<TaxaGroups, TaxaGroupsDto>();
+                .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(src => src.habitat_classification))
+                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description));
         }
     }
 }
