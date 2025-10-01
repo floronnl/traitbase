@@ -72,13 +72,13 @@ namespace biobase.API.Controllers
         }
 
             /// <summary>
-            /// Retrieves a list of all taxa, with an optional filter by taxon class or species ID.
+            /// Retrieves a list of all taxa, with an optional filter by taxon class or ID.
             /// </summary>
             /// <param name="taxaGroup">
             /// Optional filter for taxa group. Use Dutch abbreviations like 'V' for vascular plants or 'R' for reptiles. If not provided, all taxa groups will be returned.
             /// </param>
             /// <param name="taxonId">
-            /// Optional filter to retrieve data for one species by providing the taxon ID. Taxon ID correspond to the ones in Verspreidingsatlas.
+            /// Optional filter to retrieve data for a single taxon by providing its ID. Taxon ID correspond to the ones in Verspreidingsatlas.
             /// </param>
             /// <param name="threatStatus">
             /// Optional filter for threat status. Use the Dutch abbreviations, for example 'BE' or 'KW'

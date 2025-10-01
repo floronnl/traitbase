@@ -57,6 +57,9 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
                 .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(src => src.habitat_classification))
                 .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description));
+
+            // TRAITS
+            
         }
     }
 }
