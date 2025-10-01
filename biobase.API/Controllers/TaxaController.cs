@@ -95,14 +95,14 @@ namespace biobase.API.Controllers
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetTaxaAsync(
-            [FromQuery] string? taxonGroup, 
+            [FromQuery] string? taxaGroup, 
             [FromQuery] int? taxonId, 
             [FromQuery] string? threatStatus,
             [FromQuery] string format = "csv")
         {
             try
             {
-                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxonGroup, taxonId, threatStatus);
+                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxaGroup, taxonId, threatStatus);
                 var taxaDto = _mapper.Map<List<TaxaDto>>(taxaDomain);
 
                 if (format.ToLower() == "json")
