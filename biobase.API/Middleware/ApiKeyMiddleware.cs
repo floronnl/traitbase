@@ -39,8 +39,8 @@ namespace biobase.API.Middleware
             // Bypass API key validation for Taxa endpoints (public)
             if (
                 context.Request.Path.StartsWithSegments("/api/taxa", StringComparison.OrdinalIgnoreCase) || 
-                context.Request.Path.StartsWithSegments("/api/traits/pivot", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/habitatclassestaxa/habitatcodes", StringComparison.OrdinalIgnoreCase)
+                context.Request.Path.StartsWithSegments("/api/traits/traitsPivot", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/habitatClassesTaxa/habitatCodes", StringComparison.OrdinalIgnoreCase)
                 )
             {
                 await _next(context); // Skip API key validation for Taxa and Pivot table endpoints

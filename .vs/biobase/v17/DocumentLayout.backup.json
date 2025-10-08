@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "M:\\Nick\\biobase\\biobase\\traitbase\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\controllers\\taxacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\controllers\\taxacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -18,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,32 +26,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaxaController.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Controllers\\TaxaController.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
-              "RelativeToolTip": "biobase.API\\Controllers\\TaxaController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAIwF8AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T15:16:36.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AutoMapperProfiles.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeToolTip": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAUwD0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T06:25:11.573Z",
-              "EditorCaption": ""
             }
           ]
         }
