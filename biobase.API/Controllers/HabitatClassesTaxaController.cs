@@ -91,8 +91,8 @@ namespace biobase.API.Controllers
         /// <param name="threatStatus">
         /// Filter for Red List status. Use the Dutch abbreviations (e.g. 'BE' or 'KW'). 
         /// </param>
-        /// <param name="taxonGroup">
-        /// Filter for taxon class. Use the Dutch names (e.g. 'Vaatplanten' or 'Libellen').
+        /// <param name="taxaGroup">
+        /// Filter for taxa group. Use the Dutch names (e.g. 'Vaatplanten' or 'Libellen').
         /// </param>
         /// <param name="format">
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
@@ -108,7 +108,7 @@ namespace biobase.API.Controllers
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetFiltered(
             [FromQuery] string? habitatClassification, [FromQuery] string? habitatCode, 
-            [FromQuery] string? taxonCategory, [FromQuery] string? threatStatus, [FromQuery] string? taxonGroup, 
+            [FromQuery] string? taxonCategory, [FromQuery] string? threatStatus, [FromQuery] string? taxaGroup, 
             [FromQuery] string format = "csv")
         {
             try
@@ -116,12 +116,12 @@ namespace biobase.API.Controllers
                 // Ensure at least one filter is provided
                 if (string.IsNullOrEmpty(habitatClassification) && string.IsNullOrEmpty(habitatCode) &&
                     string.IsNullOrEmpty(taxonCategory) && string.IsNullOrEmpty(threatStatus) &&
-                    string.IsNullOrEmpty(taxonGroup))
+                    string.IsNullOrEmpty(taxaGroup))
                 {
                     return BadRequest("At least one filter must be specified.");
                 }
 
-                var habitatDomain = await _repository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxonGroup);
+                var habitatDomain = await _repository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxaGroup);
                 var habitatDto = _mapper.Map<List<HabitatClassesTaxaDto>>(habitatDomain);
 
                 if (format.ToLower() == "json")
