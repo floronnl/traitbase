@@ -9,3 +9,12 @@ This API was developed by FLORON Plant Conservation Netherlands with support of 
 - Query data on habitat codes, taxon id, and taxa group.
 - Export data in CSV or JSON format.
 - Publicly available endpoints and restricted endpoints.
+
+## Contact
+For questions or feedback regarding this API, please contact:
+
+**Nick van Doormaal (FLORON)**  
+Email: [nick.vandoormaal@floron.nl](mailto:nick.vandoormaal@floron.nl)
+
+**Laurens Sparrius (FLORON / BLWG)**
+Email: [sparrius@floron.nl](mailto:sparrius@floron.nl)
