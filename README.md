@@ -16,5 +16,5 @@ For questions or feedback regarding this API, please contact:
 **Nick van Doormaal (FLORON)**  
 Email: [nick.vandoormaal@floron.nl](mailto:nick.vandoormaal@floron.nl)
 
-**Laurens Sparrius (FLORON / BLWG)**
+**Laurens Sparrius (FLORON / BLWG)**  
 Email: [sparrius@floron.nl](mailto:sparrius@floron.nl)
