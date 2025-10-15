@@ -65,4 +65,39 @@ ggplot(data = taxa_clean, aes(x = threatStatus)) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+
+# Define base URL
+api_base <- "https://www.traitbase.nl/api/traits/traitsSingleTaxon"
+
+all_taxon_ids <- c(26, 35, 498, 991)
+ellenberg_variables <- c("ellenberg_zuurgraad", "ellenberg_temperatuur")
+ellenberg_variables <- paste0(ellenberg_variables, collapse = "|")
+
+# Define function to fetch and process trait data
+get_taxon_traits <- function(my_taxon_id) {
+  
+  # Define query
+  query <- list(taxonId = my_taxon_id)
+  
+  # Define the endpoint with query parameters
+  api_base <- "https://www.traitbase.nl/api/traits/traitsSingleTaxon"
+  response <- GET(api_base, add_headers(`X-API-KEY` = my_api_key), query = query)
+  
+  # Read the CSV response directly from the API
+  df <- read.csv2(text = content(response, "text", encoding = "UTF-8"))
+  
+  # Keep only columns with 'ellenberg' + add taxon_id column
+  df$taxonId <- my_taxon_id
+  df <- df[, grepl(ellenberg_variables, names(df)) | names(df) == "taxonId", drop = FALSE]
+  
+  return(df)
+}
+
+# Loop over all IDs and combine results
+taxon_traits_list <- lapply(all_taxon_ids, get_taxon_traits)
+taxon_traits <- do.call(rbind, taxon_traits_list)
+
+colMeans(taxon_traits[, grepl(ellenberg_variables, names(taxon_traits))])
+
+
   
