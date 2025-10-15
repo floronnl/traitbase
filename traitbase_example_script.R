@@ -104,3 +104,23 @@ taxon_traits |>
     mean_value = mean(as.numeric(ellenberg_licht), na.rm = TRUE)
   )
 
+
+# Define base URL
+api_base <- "https://www.traitbase.nl/api/traits/traitsSingleTaxon"
+
+taxon_ids <- c(26, 35, 498, 991)
+
+# Define function to fetch and process trait data
+get_taxon_traits <- function(taxon_id) {
+  # Construct query URL
+  url <- paste0(api_base, "?taxonId=", taxon_id)
+  
+  # Read CSV data directly from the API
+  df <- read.csv2(url, stringsAsFactors = FALSE)
+  
+  # Keep only columns with 'ellenberg' + add taxon_id column
+  df$taxon_id <- taxon_id
+  df <- df[, grepl("ellenberg", names(df)) | names(df) == "taxon_id", drop = FALSE]
+  
+  return(df)
+}

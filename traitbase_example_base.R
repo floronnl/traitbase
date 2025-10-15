@@ -3,24 +3,22 @@
 ###               USING BASE R             ###
 ### ### ### ### ### ### ### ### ### ### ###
 
-## Last updated on 9 OCT 2025
+## Last updated on 14 OCT 2025
 ## By Nick van Doormaal (FLORON)
 
 # Define query parameters
-my_taxon_group <- "R"
-my_threat_status <- "KW"
+my_habitat_class <- "beheertype"
 
 # Define the endpoint with query parameters
 url <- paste0(
-  "https://www.traitbase.nl/api/taxa?taxonGroup=", my_taxon_group,
-  "&threatStatus=", my_threat_status
+  "https://www.traitbase.nl/api/habitatClassesTaxa/habitatCodes?habitatClassification=", my_habitat_class
 )
 
 # Read the CSV response directly from the API
-taxa_df <- read.csv2(url)
+habitatcodes_df <- read.csv2(url)
 
 # Show first rows
-head(taxa_df)
+head(habitatcodes_df)
 
 
 # To access endpoints that require an API-key, the approach is a bit more complicated.
@@ -28,7 +26,7 @@ head(taxa_df)
 require(httr)
 
 # Define query parameters
-my_api_key <- "5cf12c8e-7c60-4750-a0b4-a64ca1521cc4"
+my_api_key <- "my-api-key"
 query <- list(taxonGroup = "Vaatplanten", taxonCategory = "snlsoort")
 
 # Define the endpoint with query parameters
@@ -42,4 +40,29 @@ habitat_taxa <- read.csv2(text = content(response, "text", encoding = "UTF-8"))
 head(habitat_taxa)
 
 # Practical example
-# Visualise number of species per threat status and taxa group
+# Visualize number of species per threat status and taxa group
+
+# Define the endpoint with query parameters
+url <- paste0(
+  "https://www.traitbase.nl/api/taxa"
+)
+
+# Read the CSV response directly from the API
+taxa_df <- read.csv2(url)
+
+# Filter for only accepted names and taxon with a valid threat status
+taxa_clean <- subset(taxa_df, isAcceptedName == -1 & nchar(threatStatus) > 0)
+
+## Make contingency table of taxon group and threat status
+xtabs(~ threatStatus + taxaGroup, data = taxa_clean)
+
+# Visualize with ggplot2
+library(ggplot2)
+
+ggplot(data = taxa_clean, aes(x = threatStatus)) +
+  geom_bar(stat = "count") +
+  facet_wrap(~taxaGroup) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+  
