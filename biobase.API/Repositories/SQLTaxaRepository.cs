@@ -42,7 +42,20 @@ namespace biobase.API.Repositories
             }
             if (!string.IsNullOrWhiteSpace(habitat_directive))
             {
-                taxaQuery = taxaQuery.Where(x => x.habitatrichtlijn.Equals(habitat_directive, StringComparison.OrdinalIgnoreCase));
+                var numerals = habitat_directive.Split(',', StringSplitOptions.RemoveEmptyEntries)
+                                                .Select(n => n.Trim())
+                                                .ToList();
+
+                foreach (var numeral in numerals)
+                {
+                    var searchTerm = numeral;
+                    // Matches: "bijlage V", "bijlagen II+V", "bijlagen V+II", etc.
+                    taxaQuery = taxaQuery.Where(x =>
+                        EF.Functions.Like(x.habitatrichtlijn, $"% {searchTerm}") ||      // ends with " V"
+                        EF.Functions.Like(x.habitatrichtlijn, $"% {searchTerm}+%") ||    // contains " V+"
+                        EF.Functions.Like(x.habitatrichtlijn, $"%+{searchTerm}+%") ||    // contains "+V+"
+                        EF.Functions.Like(x.habitatrichtlijn, $"%+{searchTerm}"));       // ends with "+V"
+                }
             }
 
             return await taxaQuery.ToListAsync();
