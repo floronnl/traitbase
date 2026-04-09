@@ -12,6 +12,7 @@ namespace biobase.API.Models.Domain
         public string? familie { get; set; }
         public string? label { get; set; }
         public string? identity { get; set; }
+        public string? habitatrichtlijn { get; set; }
         public string? rl { get; set; }
         public string? zzz { get; set; }
         public string? deelgroep { get; set; }

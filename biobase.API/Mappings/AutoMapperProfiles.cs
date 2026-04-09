@@ -19,6 +19,7 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.Family, opt => opt.MapFrom(src => src.familie))
                 .ForMember(dest => dest.TaxonLabel, opt => opt.MapFrom(src => src.label))
                 .ForMember(dest => dest.NdffIdentity, opt => opt.MapFrom(src => src.identity))
+                .ForMember(dest => dest.HabitatDirective, opt => opt.MapFrom(src => src.habitatrichtlijn))
                 .ForMember(dest => dest.ThreatStatus, opt => opt.MapFrom(src => src.rl))
                 .ForMember(dest => dest.OccurenceStatus, opt => opt.MapFrom(src => src.zzz))
                 .ForMember(dest => dest.TaxaSubgroup, opt => opt.MapFrom(src => src.deelgroep))

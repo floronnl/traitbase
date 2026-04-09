@@ -1,22 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "M:\\Nick\\biobase\\biobase\\traitbase\\",
+  "WorkspaceRootPath": "D:\\traitbase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\controllers\\taxacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\controllers\\taxacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\models\\domain\\taxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\domain\\taxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|m:\\nick\\biobase\\biobase\\traitbase\\biobase.api\\controllers\\traitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\controllers\\traitscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\models\\dto\\taxadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\dto\\taxadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,53 +42,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaxaController.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Controllers\\TaxaController.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
-              "RelativeToolTip": "biobase.API\\Controllers\\TaxaController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TaxaDto.cs",
+              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Models\\DTO\\TaxaDto.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Models\\DTO\\TaxaDto.cs",
+              "ToolTip": "D:\\traitbase\\biobase.API\\Models\\DTO\\TaxaDto.cs",
+              "RelativeToolTip": "biobase.API\\Models\\DTO\\TaxaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T09:29:20.395Z",
+              "WhenOpened": "2026-04-09T12:56:21.98Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApiKeyMiddleware.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Middleware\\ApiKeyMiddleware.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Middleware\\ApiKeyMiddleware.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Middleware\\ApiKeyMiddleware.cs",
-              "RelativeToolTip": "biobase.API\\Middleware\\ApiKeyMiddleware.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAABZAAAAAAAAAA==",
+              "Title": "Taxa.cs",
+              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Models\\Domain\\Taxa.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Models\\Domain\\Taxa.cs",
+              "ToolTip": "D:\\traitbase\\biobase.API\\Models\\Domain\\Taxa.cs",
+              "RelativeToolTip": "biobase.API\\Models\\Domain\\Taxa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T15:33:30.387Z",
+              "WhenOpened": "2026-04-09T12:56:02.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Program.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Program.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Program.cs",
-              "RelativeToolTip": "biobase.API\\Program.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AutoMapperProfiles.cs",
+              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
+              "ToolTip": "D:\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
+              "RelativeToolTip": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T15:32:53.271Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TraitsController.cs",
-              "DocumentMoniker": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TraitsController.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Controllers\\TraitsController.cs",
-              "ToolTip": "M:\\Nick\\biobase\\biobase\\traitbase\\biobase.API\\Controllers\\TraitsController.cs",
-              "RelativeToolTip": "biobase.API\\Controllers\\TraitsController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-08T15:32:30.134Z"
+              "WhenOpened": "2026-04-09T12:55:28.062Z",
+              "EditorCaption": ""
             }
           ]
         }

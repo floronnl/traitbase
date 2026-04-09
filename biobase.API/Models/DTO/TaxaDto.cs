@@ -10,6 +10,7 @@ namespace biobase.API.Models.DTO
         public string? Family { get; set; }
         public string? TaxonLabel { get; set; }
         public string? NdffIdentity { get; set; }
+        public string? HabitatDirective { get; set; }
         public string? ThreatStatus { get; set; }
         public string? OccurenceStatus { get; set; }
         public string? TaxaSubgroup{ get; set; }
