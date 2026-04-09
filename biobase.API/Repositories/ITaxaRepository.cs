@@ -6,6 +6,6 @@ namespace biobase.API.Repositories
     {
         Task<List<TaxaGroups>> GetTaxaGroupsAsync();
         Task<List<Taxa>> GetTaxaAsync(
-            string? soortgroep = null, int? soortnummer = null, string? rl = null);
+            string? soortgroep = null, int? soortnummer = null, string? rl = null, string? habitatrichtlijn = null);
     }
 }

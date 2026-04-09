@@ -98,11 +98,12 @@ namespace biobase.API.Controllers
             [FromQuery] string? taxaGroup, 
             [FromQuery] int? taxonId, 
             [FromQuery] string? threatStatus,
+            [FromQuery] string? habitatDirective,
             [FromQuery] string format = "csv")
         {
             try
             {
-                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxaGroup, taxonId, threatStatus);
+                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxaGroup, taxonId, threatStatus, habitatDirective);
                 var taxaDto = _mapper.Map<List<TaxaDto>>(taxaDomain);
 
                 if (format.ToLower() == "json")

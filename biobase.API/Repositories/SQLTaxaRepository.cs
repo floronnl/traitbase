@@ -23,7 +23,7 @@ namespace biobase.API.Repositories
 
         // GET ALL TAXA
         public async Task<List<Taxa>> GetTaxaAsync(
-            string? taxon_class = null, int? species_id = null, string? rl = null)
+            string? taxon_class = null, int? species_id = null, string? rl = null, string? habitat_directive = null)
         {
             var taxaQuery = _dbContext.taxa.AsQueryable();
 
@@ -39,6 +39,10 @@ namespace biobase.API.Repositories
             if (!string.IsNullOrWhiteSpace(rl))
             {
                 taxaQuery = taxaQuery.Where(x => x.rl.Equals(rl, StringComparison.OrdinalIgnoreCase));
+            }
+            if (!string.IsNullOrWhiteSpace(habitat_directive))
+            {
+                taxaQuery = taxaQuery.Where(x => x.habitatrichtlijn.Equals(habitat_directive, StringComparison.OrdinalIgnoreCase));
             }
 
             return await taxaQuery.ToListAsync();
