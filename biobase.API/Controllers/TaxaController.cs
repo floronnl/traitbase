@@ -71,23 +71,26 @@ namespace biobase.API.Controllers
 
         }
 
-            /// <summary>
-            /// Retrieves a list of all taxa, with an optional filter by taxon class or ID.
-            /// </summary>
-            /// <param name="taxaGroup">
-            /// Optional filter for taxa group. Use Dutch abbreviations like 'V' for vascular plants or 'R' for reptiles. If not provided, all taxa groups will be returned.
-            /// </param>
-            /// <param name="taxonId">
-            /// Optional filter to retrieve data for a single taxon by providing its ID. Taxon ID correspond to the ones in Verspreidingsatlas.
-            /// </param>
-            /// <param name="threatStatus">
-            /// Optional filter for threat status. Use the Dutch abbreviations, for example 'BE' or 'KW'
-            /// </param>
-            /// <param name="format">
-            /// The format in which to return the data, either "csv" or "json". Default is "csv".
-            /// </param>
-            /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-            [HttpGet]
+        /// <summary>
+        /// Retrieves a list of all taxa, with an optional filter by taxa group, threat status, or habitat directive.
+        /// </summary>
+        /// <param name="taxaGroup">
+        /// Optional filter for taxa group. Use Dutch abbreviations like 'V' for vascular plants or 'R' for reptiles. If not provided, all taxa groups will be returned.
+        /// </param>
+        /// <param name="taxonId">
+        /// Optional filter to retrieve data for a single taxon by providing its ID. Taxon ID correspond to the ones in Verspreidingsatlas.
+        /// </param>
+        /// <param name="threatStatus">
+        /// Optional filter for threat status. Use the Dutch abbreviations, for example 'BE' or 'KW'
+        /// </param>
+        /// <param name="habitatDirective">
+        /// Optional filter for habitat directive. Use roman numerals (e.g. 'II' or 'IV') or separated by a comma for multiple directives (e.g 'II,IV').
+        /// </param>
+        /// <param name="format">
+        /// The format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
+        [HttpGet]
         [SwaggerOperation(
             Tags = new[] { "2.2 Taxa" },
             Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
