@@ -6,7 +6,7 @@ This API was developed by FLORON Plant Conservation Netherlands with support of 
 
 ## Features
 - Retrieve habitat and species data.
-- Query data on habitat codes, taxon id, and taxa group.
+- Query data on habitat codes, habitat directive, taxon id, and taxa group.
 - Export data in CSV or JSON format.
 - Publicly available endpoints and restricted endpoints.
 
