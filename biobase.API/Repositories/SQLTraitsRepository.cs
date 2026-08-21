@@ -1,7 +1,6 @@
 ﻿using Dapper;
 using MySqlConnector;
 using System.Data;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace biobase.API.Repositories
 {
@@ -29,7 +28,7 @@ namespace biobase.API.Repositories
 
                     // Query the traits view directly
                     var query = @"
-                        SELECT *
+                        SELECT soortnummer, rubriek, weergave
                         FROM biobase.traits
                         WHERE soortnummer = @species_id";
 
