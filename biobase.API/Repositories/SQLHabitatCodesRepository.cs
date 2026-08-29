@@ -1,13 +1,17 @@
-﻿using biobase.API.Models.Domain;
+﻿using biobase.API.Data;
+using biobase.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace biobase.API.Repositories
 {
     public class SQLHabitatCodesRepository : IHabitatCodesRepository
     {
-        public async Task<List<HabitatCodes>> GetHabitatCodesAsync(string? habitat_classification = null)
-        {
-            var query = _dbContext.habitat_classes.AsQueryable(); // Target the correct table
+        private readonly BiobaseDbContext _dbContext;
+
+        public async Task<List<HabitatCodes>> GetHabitatsAsync(
+            string? habitat_classification = null
+            ) {
+            var query = _dbContext.habitat_classes.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(habitat_classification))
             {
