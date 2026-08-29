@@ -2,7 +2,7 @@
 
 namespace biobase.API.Repositories
 {
-    public class IEuHabitatCodesRepository
+    public interface IEuHabitatCodesRepository
     {
         Task<List<EuHabitatCodes>> GetAllAsync();
     }

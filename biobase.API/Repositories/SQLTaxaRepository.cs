@@ -14,14 +14,7 @@ namespace biobase.API.Repositories
             _dbContext = dbContext;
         }
 
-        // GET ALL TAXA GROUPS
-        public async Task<List<TaxaGroups>> GetTaxaGroupsAsync()
-        {
-            var taxaGroupsQuery = _dbContext.taxa_groups.AsQueryable();
-            return await taxaGroupsQuery.ToListAsync();
-        }
-
-        // GET ALL TAXA
+        // GET TAXA
         public async Task<List<Taxa>> GetTaxaAsync(
             string? taxon_class = null, int? species_id = null, string? rl = null, string? habitat_directive = null)
         {

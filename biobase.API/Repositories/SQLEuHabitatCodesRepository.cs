@@ -1,5 +1,6 @@
 ﻿using biobase.API.Data;
 using biobase.API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace biobase.API.Repositories
 {

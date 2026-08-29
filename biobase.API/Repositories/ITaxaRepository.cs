@@ -4,8 +4,6 @@ namespace biobase.API.Repositories
 {
     public interface ITaxaRepository
     {
-        Task<List<TaxaGroups>> GetTaxaGroupsAsync();
-        Task<List<Taxa>> GetTaxaAsync(
-            string? soortgroep = null, int? soortnummer = null, string? rl = null, string? habitatrichtlijn = null);
+        Task<List<Taxa>> GetTaxaAsync();
     }
 }

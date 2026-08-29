@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\sqlhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqlhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\sqltaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqltaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\sqlhabitatclassestaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqlhabitatclassestaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\itaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\itaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\sqltaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqltaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\itaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\itaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\repositories\\sqleuhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,8 +35,12 @@
       "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\ieuhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\models\\domain\\euhabitatcodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\domain\\euhabitatcodes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\data\\biobasedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\data\\biobasedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|c:\\users\\nick van doormaal\\documents\\github\\traitbase\\biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,25 +50,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EuHabitatCodes.cs",
-              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Models\\Domain\\EuHabitatCodes.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Models\\Domain\\EuHabitatCodes.cs",
-              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Models\\Domain\\EuHabitatCodes.cs",
-              "RelativeToolTip": "biobase.API\\Models\\Domain\\EuHabitatCodes.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "SQLTaxaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLTaxaRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLTaxaRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLTaxaRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\SQLTaxaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T09:11:19.44Z",
-              "IsPinned": true,
+              "WhenOpened": "2026-08-29T12:44:52.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SQLHabitatClassesTaxaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLHabitatClassesTaxaRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLHabitatClassesTaxaRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLHabitatClassesTaxaRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\SQLHabitatClassesTaxaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:43:40.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SQLEuHabitatCodesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:30:06.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IEuHabitatCodesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:26:15.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ITaxaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\ITaxaRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\ITaxaRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\ITaxaRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\ITaxaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:20:55.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ITaxaGroupRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\ITaxaGroupRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\ITaxaGroupRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\ITaxaGroupRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\ITaxaGroupRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:20:49.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SQLTaxaGroupRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:15:34.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SQLHabitatCodesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLHabitatCodesRepository.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLHabitatCodesRepository.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLHabitatCodesRepository.cs",
+              "RelativeToolTip": "biobase.API\\Repositories\\SQLHabitatCodesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T12:14:16.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BiobaseDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Data\\BiobaseDbContext.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Data\\BiobaseDbContext.cs",
+              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Data\\BiobaseDbContext.cs",
+              "RelativeToolTip": "biobase.API\\Data\\BiobaseDbContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwDIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-29T11:41:41.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Program.cs",
               "RelativeDocumentMoniker": "biobase.API\\Program.cs",
@@ -53,32 +180,6 @@
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAGMAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-29T10:05:43.921Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SQLEuHabitatCodesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:02:04.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IEuHabitatCodesRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
-              "ToolTip": "C:\\Users\\Nick van Doormaal\\Documents\\GitHub\\traitbase\\biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\IEuHabitatCodesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T10:01:11.258Z",
               "EditorCaption": ""
             },
             {
