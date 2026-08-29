@@ -18,9 +18,11 @@ namespace biobase.API.Data
         public DbSet<Taxa> taxa { get; set; }
         public DbSet<TaxaGroups> taxa_groups { get; set; }
         public DbSet<TraitsCategories> traits_categories { get; set; }
-        public DbSet<User> authentication { get; set; }
-        public DbSet<HabitatClassesTaxa> habitat_classes_taxa { get; set; }
         public DbSet<HabitatCodes> habitat_classes { get; set; }
+        public DbSet<HabitatClassesTaxa> habitat_classes_taxa { get; set; }
+        public DbSet<EuHabitatCodes> eu_habitat_classes { get; set; }
+
+        public DbSet<User> authentication { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -54,6 +56,9 @@ namespace biobase.API.Data
                 .HasNoKey();
 
             modelBuilder.Entity<TaxaGroups>()
+                .HasNoKey();
+
+            modelBuilder.Entity<EuHabitatCodes>()
                 .HasNoKey();
         }
     }

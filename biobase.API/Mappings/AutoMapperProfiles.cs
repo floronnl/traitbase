@@ -10,7 +10,7 @@ namespace biobase.API.Mappings
     {
         public AutoMapperProfiles()
         {
-            // TAXA MAPPING
+            // TAXA 
             CreateMap<Taxa, TaxaDto>()
                 .ForMember(dest => dest.TaxonId, opt => opt.MapFrom(src => src.soortnummer))
                 .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.groep))
@@ -27,6 +27,7 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.ScientificNameAuthorship, opt => opt.MapFrom(src => src.auteur))
                 .ForMember(dest => dest.Updated, opt => opt.MapFrom(src => src.updated));
 
+            // TAXA GROUPS
             CreateMap<TaxaGroups, TaxaGroupsDto>()
                 .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.taxa_group))
                 .ForMember(dest => dest.TaxaGroupDescription, opt => opt.MapFrom(src => src.taxa_group_description));
@@ -54,13 +55,21 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.ExtraInfo, opt => opt.MapFrom(src => src.extra_info))
                 .ForMember(dest => dest.NdffIdentity, opt => opt.MapFrom(src => src.identity));
 
+            // HABITAT CODES
             CreateMap<HabitatCodes, HabitatCodesDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
                 .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(src => src.habitat_classification))
                 .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description));
 
-            // TRAITS
-            
+            // EU HABITAT CODES
+            CreateMap<EuHabitatCodes, EuHabitatCodeDto>()
+                .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
+                .ForMember(dest => dest.EuHabitatCode, opt => opt.MapFrom(src => src.eu_habitat_code))
+                .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description))
+                .ForMember(dest => dest.HabitatDescriptionFull, opt => opt.MapFrom(src => src.habitat_description_full))
+                .ForMember(dest => dest.HabitatDescriptionEn, opt => opt.MapFrom(src => src.habitat_description_en))
+                .ForMember(dest => dest.AnnexIPriority, opt => opt.MapFrom(src => src.annex_i_priority));
+
         }
     }
 }

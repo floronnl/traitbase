@@ -97,6 +97,7 @@ builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepos
 builder.Services.AddScoped<ICsvExportService, CsvExportService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IHabitatClassesTaxaRepository, SQLHabitatClassesTaxaRepository>();
+builder.Services.AddScoped<IEuHabitatCodesRepository, SQLEuHabitatCodesRepository>();
 
 // Registering MVC Controllers
 builder.Services.AddControllers()
