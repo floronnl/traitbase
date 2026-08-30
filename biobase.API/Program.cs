@@ -96,7 +96,7 @@ builder.Services.AddScoped<ITraitsRepository>(sp => new SQLTraitsRepository(conn
 builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepository>();
 builder.Services.AddScoped<ICsvExportService, CsvExportService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IHabitatClassesTaxaRepository, SQLHabitatClassesTaxaRepository>();
+builder.Services.AddScoped<IHabitatCodesRepository, SQLHabitatCodesRepository>();
 builder.Services.AddScoped<IEuHabitatCodesRepository, SQLEuHabitatCodesRepository>();
 
 // Registering MVC Controllers

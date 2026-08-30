@@ -9,10 +9,9 @@ namespace biobase.API.Repositories
         private readonly BiobaseDbContext _dbContext;
         private readonly ILogger<SQLEuHabitatCodesRepository> _logger;
 
-        public SQLEuHabitatCodesRepository(BiobaseDbContext dbContext, ILogger<SQLEuHabitatCodesRepository> logger)
+        public SQLEuHabitatCodesRepository(BiobaseDbContext dbContext)
         {
             _dbContext = dbContext;
-            _logger = logger;
         }
 
         public async Task<List<EuHabitatCodes>> GetAllAsync()

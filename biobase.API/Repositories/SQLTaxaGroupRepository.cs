@@ -7,12 +7,10 @@ namespace biobase.API.Repositories
     public class SQLTaxaGroupRepository : ITaxaGroupRepository
     {
         private readonly BiobaseDbContext _dbContext;
-        private readonly ILogger<SQLTaxaGroupRepository> _logger;
 
-        public SQLTaxaGroupRepository(BiobaseDbContext dbContext, ILogger<SQLTaxaGroupRepository> logger)
-        {
+        public SQLTaxaGroupRepository(BiobaseDbContext dbContext)
+        { 
             _dbContext = dbContext;
-            _logger = logger;
         }
 
         public async Task<List<TaxaGroups>> GetAllAsync()

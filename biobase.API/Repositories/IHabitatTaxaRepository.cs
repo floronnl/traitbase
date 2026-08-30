@@ -2,7 +2,7 @@
 
 namespace biobase.API.Repositories
 {
-    public interface IHabitatClassesTaxaRepository
+    public interface IHabitatTaxaRepository
     {
         Task<List<HabitatClassesTaxa>> GetHabitatTaxaAsync(
             string? habitat_classification, string? habitat_code, 

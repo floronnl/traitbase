@@ -1,7 +1,6 @@
 ﻿using biobase.API.Data;
 using biobase.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
-using MySql.EntityFrameworkCore.Extensions;
 
 namespace biobase.API.Repositories
 {
@@ -16,7 +15,7 @@ namespace biobase.API.Repositories
 
         // GET TAXA
         public async Task<List<Taxa>> GetTaxaAsync(
-            string? taxon_class = null, int? species_id = null, string? rl = null, string? habitat_directive = null)
+            string? taxon_class = null, int? species_id = null, string? rl = null)
         {
             var taxaQuery = _dbContext.taxa.AsQueryable();
 
@@ -32,23 +31,6 @@ namespace biobase.API.Repositories
             if (!string.IsNullOrWhiteSpace(rl))
             {
                 taxaQuery = taxaQuery.Where(x => x.rl.Equals(rl, StringComparison.OrdinalIgnoreCase));
-            }
-            if (!string.IsNullOrWhiteSpace(habitat_directive))
-            {
-                var numerals = habitat_directive.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                                                .Select(n => n.Trim())
-                                                .ToList();
-
-                foreach (var numeral in numerals)
-                {
-                    var searchTerm = numeral;
-                    // Matches: "bijlage V", "bijlagen II+V", "bijlagen V+II", etc.
-                    taxaQuery = taxaQuery.Where(x =>
-                        EF.Functions.Like(x.habitatrichtlijn, $"% {searchTerm}") ||      // ends with " V"
-                        EF.Functions.Like(x.habitatrichtlijn, $"% {searchTerm}+%") ||    // contains " V+"
-                        EF.Functions.Like(x.habitatrichtlijn, $"%+{searchTerm}+%") ||    // contains "+V+"
-                        EF.Functions.Like(x.habitatrichtlijn, $"%+{searchTerm}"));       // ends with "+V"
-                }
             }
 
             return await taxaQuery.ToListAsync();

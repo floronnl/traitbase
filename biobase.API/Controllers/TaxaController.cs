@@ -15,14 +15,24 @@ namespace biobase.API.Controllers
     [ApiController]
     public class TaxaController : ControllerBase
     {
+        private readonly ITaxaGroupRepository _taxaGroupRepository;
         private readonly ITaxaRepository _taxaRepository;
+        private readonly IHabitatTaxaRepository _habitatTaxaRepository;
         private readonly IMapper _mapper;
         private readonly ICsvExportService _csvExportService;
         private readonly ILogger<TaxaController> _logger;
 
-        public TaxaController(ITaxaRepository taxaRepository, IMapper mapper, ICsvExportService csvExportService, ILogger<TaxaController> logger)
-        {
+        public TaxaController(
+            ITaxaGroupRepository taxaGroupRepository,
+            ITaxaRepository taxaRepository, 
+            IHabitatTaxaRepository habitatTaxaRepository,
+            IMapper mapper, 
+            ICsvExportService csvExportService, 
+            ILogger<TaxaController> logger
+            ) {
+            _taxaGroupRepository = taxaGroupRepository;
             _taxaRepository = taxaRepository;
+            _habitatTaxaRepository = habitatTaxaRepository;
             _mapper = mapper;
             _csvExportService = csvExportService;
             _logger = logger;
@@ -46,7 +56,7 @@ namespace biobase.API.Controllers
         {
             try
             {
-                var taxaGroupsDomain = await _taxaRepository.GetTaxaGroupsAsync();
+                var taxaGroupsDomain = await _taxaGroupRepository.GetAllAsync();
                 var taxaGroupsDto = _mapper.Map<List<TaxaGroupsDto>>(taxaGroupsDomain);
 
                 if (format.ToLower() == "json")
@@ -83,14 +93,11 @@ namespace biobase.API.Controllers
         /// <param name="threatStatus">
         /// Optional filter for threat status. Use the Dutch abbreviations, for example 'BE' or 'KW'
         /// </param>
-        /// <param name="habitatDirective">
-        /// Optional filter for habitat directive. Use roman numerals (e.g. 'II' or 'IV') or separated by a comma for multiple directives (e.g 'II,IV').
-        /// </param>
         /// <param name="format">
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet]
+        [HttpGet("taxa")]
         [SwaggerOperation(
             Tags = new[] { "2.2 Taxa" },
             Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
@@ -98,15 +105,14 @@ namespace biobase.API.Controllers
         [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetTaxaAsync(
-            [FromQuery] string? taxaGroup, 
-            [FromQuery] int? taxonId, 
+            [FromQuery] string? taxaGroup,
+            [FromQuery] int? taxonId,
             [FromQuery] string? threatStatus,
-            [FromQuery] string? habitatDirective,
             [FromQuery] string format = "csv")
         {
             try
             {
-                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxaGroup, taxonId, threatStatus, habitatDirective);
+                var taxaDomain = await _taxaRepository.GetTaxaAsync(taxaGroup, taxonId, threatStatus);
                 var taxaDto = _mapper.Map<List<TaxaDto>>(taxaDomain);
 
                 if (format.ToLower() == "json")
@@ -153,9 +159,9 @@ namespace biobase.API.Controllers
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
-        [HttpGet]
+        [HttpGet("habitatTaxa")]
         [SwaggerOperation(
-            Tags = new[] { "1.2 Habitat classes - Taxa" },
+            Tags = new[] { "2.3 Associated taxa per habitat class" },
             Summary = "Get Habitat-Taxa data", Description = "Retrieve a habitat class and the associated taxon (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]
@@ -199,8 +205,5 @@ namespace biobase.API.Controllers
                 return StatusCode(500, "An error occurred while processing your request.");
             }
         }
-    }
-}
-
     }
 }

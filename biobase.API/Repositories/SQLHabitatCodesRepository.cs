@@ -8,6 +8,11 @@ namespace biobase.API.Repositories
     {
         private readonly BiobaseDbContext _dbContext;
 
+        public SQLHabitatCodesRepository(BiobaseDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public async Task<List<HabitatCodes>> GetHabitatsAsync(
             string? habitat_classification = null
             ) {

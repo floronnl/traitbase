@@ -4,38 +4,43 @@ using biobase.API.Repositories;
 using biobase.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using static Org.BouncyCastle.Bcpg.Attr.ImageAttrib;
 
 namespace biobase.API.Controllers
 {
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/habitatClasses")]
+    [Route("api/habitatCodes")]
     [ApiController]
-    public class HabitatClassesController : ControllerBase
+    public class HabitatCodesController : ControllerBase
     {
-        private readonly IHabitatClassesTaxaRepository _repository;
+        private readonly IHabitatCodesRepository _habitatCodesRepository;
+        private readonly IEuHabitatCodesRepository _euHabitatCodesRepository;
         private readonly IMapper _mapper;
         private readonly ICsvExportService _csvExportService;
-        private readonly ILogger<HabitatClassesController> _logger;
+        private readonly ILogger<HabitatCodesController> _logger;
 
-        public HabitatClassesController(IHabitatClassesTaxaRepository repository, IMapper mapper, ICsvExportService csvExportService, ILogger<HabitatClassesController> logger)
-        {
-            _repository = repository;
+        public HabitatCodesController(
+            IHabitatCodesRepository repository, 
+            IEuHabitatCodesRepository euHabitatCodesRepository,
+            IMapper mapper, 
+            ICsvExportService csvExportService, 
+            ILogger<HabitatCodesController> logger
+            ) {
+            _habitatCodesRepository = repository;
+            _euHabitatCodesRepository = euHabitatCodesRepository;
             _mapper = mapper;
             _csvExportService = csvExportService;
             _logger = logger;
         }
         /// <summary>
-        /// Retrieves data on habitat classes and associated taxa
-        /// At least one of the filters below must be specified.
+        /// Retrieves data on habitat codes
         /// </summary>
         /// <param name="habitatClassification">
-        /// Optional filter for habitat classification: 'beheertype', 'cultuurdoeltype', 'habitattype' of 'natuurdoeltype'.
+        /// Optional filter for habitat classification: 'beheertype', 'cultuurdoeltype', 'habitattype', or 'natuurdoeltype'.
         /// </param>
         /// <param name="format">
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
-        /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
+        /// <returns>A downloadable response containing the habitat codes.</returns>
         [HttpGet("habitatCodes")]
         [SwaggerOperation(
             Tags = new[] { "1.1 Habitat codes" },
@@ -50,7 +55,7 @@ namespace biobase.API.Controllers
         {
             try
             {
-                var habitat_codes = await _repository.GetHabitatCodesAsync(habitatClassification);
+                var habitat_codes = await _habitatCodesRepository.GetHabitatsAsync(habitatClassification);
                 var habitatDto = _mapper.Map<List<HabitatCodesDto>>(habitat_codes);
 
                 if (format.ToLower() == "json")
