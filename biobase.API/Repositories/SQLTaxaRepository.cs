@@ -15,7 +15,10 @@ namespace biobase.API.Repositories
 
         // GET TAXA
         public async Task<List<Taxa>> GetTaxaAsync(
-            string? taxon_class = null, int? species_id = null, string? rl = null)
+            string? taxon_class = null, 
+            int? species_id = null, 
+            string? rl = null
+            )
         {
             var taxaQuery = _dbContext.taxa.AsQueryable();
 

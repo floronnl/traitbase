@@ -182,7 +182,7 @@ namespace biobase.API.Controllers
                     return BadRequest("At least one filter must be specified.");
                 }
 
-                var habitatDomain = await _repository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxaGroup);
+                var habitatDomain = await _habitatTaxaRepository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxaGroup);
                 var habitatDto = _mapper.Map<List<HabitatClassesTaxaDto>>(habitatDomain);
 
                 if (format.ToLower() == "json")
