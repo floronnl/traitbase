@@ -18,9 +18,9 @@ namespace biobase.API.Data
         public DbSet<Taxa> taxa { get; set; }
         public DbSet<TaxaGroups> taxa_groups { get; set; }
         public DbSet<TraitsCategories> traits_categories { get; set; }
-        public DbSet<HabitatCodes> habitat_classes { get; set; }
+        public DbSet<HabitatClasses> habitat_classes { get; set; }
         public DbSet<HabitatClassesTaxa> habitat_classes_taxa { get; set; }
-        public DbSet<EuHabitatCodes> eu_habitat_classes { get; set; }
+        public DbSet<EuHabitatClasses> eu_habitat_classes { get; set; }
 
         public DbSet<User> authentication { get; set; }
 
@@ -52,13 +52,13 @@ namespace biobase.API.Data
                 .HasDatabaseName("IX_Taxa_Groep")
                 .IsUnique(false);
 
-            modelBuilder.Entity<HabitatCodes>()
+            modelBuilder.Entity<HabitatClasses>()
                 .HasNoKey();
 
             modelBuilder.Entity<TaxaGroups>()
                 .HasNoKey();
 
-            modelBuilder.Entity<EuHabitatCodes>()
+            modelBuilder.Entity<EuHabitatClasses>()
                 .HasNoKey();
         }
     }

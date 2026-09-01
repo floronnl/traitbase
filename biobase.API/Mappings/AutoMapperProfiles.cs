@@ -56,13 +56,13 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.NdffIdentity, opt => opt.MapFrom(src => src.identity));
 
             // HABITAT CODES
-            CreateMap<HabitatCodes, HabitatCodesDto>()
+            CreateMap<HabitatClasses, HabitatClassesDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
                 .ForMember(dest => dest.HabitatClassification, opt => opt.MapFrom(src => src.habitat_classification))
                 .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description));
 
             // EU HABITAT CODES
-            CreateMap<EuHabitatCodes, EuHabitatCodeDto>()
+            CreateMap<EuHabitatClasses, EuHabitatClassesDto>()
                 .ForMember(dest => dest.HabitatCode, opt => opt.MapFrom(src => src.habitat_code))
                 .ForMember(dest => dest.EuHabitatCode, opt => opt.MapFrom(src => src.eu_habitat_code))
                 .ForMember(dest => dest.HabitatDescription, opt => opt.MapFrom(src => src.habitat_description))

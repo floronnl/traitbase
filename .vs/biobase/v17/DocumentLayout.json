@@ -7,28 +7,8 @@
       "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\controllers\\taxacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\controllers\\habitatcodescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\controllers\\habitatcodescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\repositories\\sqltaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqltaxarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\repositories\\sqltaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqltaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\repositories\\itaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\itaxagrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\repositories\\sqleuhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\repositories\\sqleuhabitatcodesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,64 +38,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ITaxaGroupRepository.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Repositories\\ITaxaGroupRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\ITaxaGroupRepository.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Repositories\\ITaxaGroupRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\ITaxaGroupRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-31T08:01:05.468Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SQLTaxaRepository.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Repositories\\SQLTaxaRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLTaxaRepository.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Repositories\\SQLTaxaRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\SQLTaxaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T19:07:04.647Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SQLTaxaGroupRepository.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\SQLTaxaGroupRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T18:52:11.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Program.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Program.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Program.cs",
-              "RelativeToolTip": "biobase.API\\Program.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAAAGIAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T18:50:47.877Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TaxaController.cs",
               "DocumentMoniker": "D:\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
               "RelativeDocumentMoniker": "biobase.API\\Controllers\\TaxaController.cs",
               "ToolTip": "D:\\traitbase\\biobase.API\\Controllers\\TaxaController.cs",
               "RelativeToolTip": "biobase.API\\Controllers\\TaxaController.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAuwL0AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAYwGMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-30T18:43:11.218Z",
               "EditorCaption": ""
@@ -123,27 +52,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HabitatCodesController.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Controllers\\HabitatCodesController.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Controllers\\HabitatCodesController.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Controllers\\HabitatCodesController.cs",
-              "RelativeToolTip": "biobase.API\\Controllers\\HabitatCodesController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAhAAAAAAAAAA==",
+              "Title": "ApiKeyMiddleware.cs",
+              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Middleware\\ApiKeyMiddleware.cs",
+              "ToolTip": "D:\\traitbase\\biobase.API\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeToolTip": "biobase.API\\Middleware\\ApiKeyMiddleware.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T18:27:26.121Z",
+              "WhenOpened": "2026-09-01T07:58:20.551Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SQLEuHabitatCodesRepository.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "RelativeToolTip": "biobase.API\\Repositories\\SQLEuHabitatCodesRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-29T12:30:06.817Z"
             }
           ]
         }

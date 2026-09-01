@@ -11,7 +11,7 @@ namespace biobase.API.Controllers
     /// Controller to handle API requests for Taxa. Provides endpoints to retrieve and export taxa data as CSV or JSON files.
     /// </summary>
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/taxa")]
+    [Route("api")]
     [ApiController]
     public class TaxaController : ControllerBase
     {
@@ -44,7 +44,7 @@ namespace biobase.API.Controllers
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet("taxaGroup")]
+        [HttpGet("taxaGroup/getTaxaGroups")]
         [SwaggerOperation(
             Tags = new[] { "2.1 Taxa groups" },
             Summary = "Get all taxa groups", Description = "Retrieve a list of all taxa groups.\nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
@@ -97,7 +97,7 @@ namespace biobase.API.Controllers
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet("taxa")]
+        [HttpGet("taxa/getTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.2 Taxa" },
             Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
@@ -159,7 +159,7 @@ namespace biobase.API.Controllers
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
-        [HttpGet("habitatTaxa")]
+        [HttpGet("habitatTaxa/getHabitatTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.3 Associated taxa per habitat class" },
             Summary = "Get Habitat-Taxa data", Description = "Retrieve a habitat class and the associated taxon (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
