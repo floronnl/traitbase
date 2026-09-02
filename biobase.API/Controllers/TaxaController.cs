@@ -40,49 +40,7 @@ namespace biobase.API.Controllers
             _csvExportService = csvExportService;
             _logger = logger;
         }
-        /// <summary>
-        /// Retrieves a list of all taxa groups
-        /// </summary>
-        /// <param name="format">
-        /// The format in which to return the data, either "csv" or "json". Default is "csv".
-        /// </param>
-        /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet("taxaGroup")]
-        [SwaggerOperation(
-            Tags = new[] { "2.1 Taxa groups" },
-            Summary = "Get all taxa groups", Description = "Retrieve a list of all taxa groups.\nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
-        [SwaggerResponse(200, "The list of taxa groups was successfully retrieved.")]
-        [SwaggerResponse(500, "An error occurred while processing your request.")]
-        public async Task<IActionResult> GetTaxaGroupsAsync(
-            [FromQuery] string format = "csv")
-        {
-            try
-            {
-                var taxaGroupsDomain = await _taxaGroupRepository.GetAllAsync();
-                var taxaGroupsDto = _mapper.Map<List<TaxaGroupsDto>>(taxaGroupsDomain);
-
-                if (format.ToLower() == "json")
-                {
-                    return Ok(taxaGroupsDto);
-                }
-                else if (format.ToLower() == "csv")
-                {
-                    var csvData = await _csvExportService.ExportToCsvAsync(taxaGroupsDto);
-                    return File(csvData, "text/csv", $"traitbase_export_taxagroups_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
-                }
-                else
-                {
-                    return BadRequest("Unsupported format. Please use 'csv' or 'json'.");
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while getting all taxa groups.");
-                return StatusCode(500, "An error occurred while processing your request.");
-            }
-
-        }
-
+        
         /// <summary>
         /// Retrieves a list of all taxa, with an optional filter by taxa group, threat status, or habitat directive.
         /// </summary>
@@ -101,7 +59,7 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
         [HttpGet("taxa")]
         [SwaggerOperation(
-            Tags = new[] { "2.2 Taxa" },
+            Tags = new[] { "3.1 Taxa" },
             Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of taxa was successfully retrieved.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
@@ -138,31 +96,6 @@ namespace biobase.API.Controllers
         }
 
         /// <summary>
-        /// Retrieves data on habitat classes and associated taxa
-        /// At least one of the filters below must be specified.
-        /// </summary>
-        /// <param name="habitatClassification">
-        /// Filter for habitat classes: 'beheertype', 'cultuurdoeltype', 'habitattype' of 'natuurdoeltype'.
-        /// </param>
-        /// <param name="habitatCode">
-        /// Filter for habitat code (e.g. '3.46' or 'N15.01').
-        /// </param>
-        /// <param name="taxonCategory">
-        /// Filter for taxon category (e.g. 'snlsoort' or 'typischesoort').
-        /// </param>
-        /// <param name="threatStatus">
-        /// Filter for Red List status. Use the Dutch abbreviations (e.g. 'BE' or 'KW'). 
-        /// </param>
-        /// <param name="taxaGroup">
-        /// Filter for taxa group. Use the Dutch names (e.g. 'Vaatplanten' or 'Libellen').
-        /// </param>
-        /// <param name="format">
-        /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
-        /// </param>
-        /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
-
-
-        /// <summary>
         /// Retrieves data on EU Directive species
         /// </summary>
         /// <param name="directive">
@@ -174,7 +107,7 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable response containing the EU-directive species.</returns>
         [HttpGet("euSpecies")]
         [SwaggerOperation(
-            Tags = new[] { "2.4 EU Directive species" },
+            Tags = new[] { "3.2 EU Directive species" },
             Summary = "Get EU species data", Description = "Retrieve a list of all EU-species with an optional filter for a specific directive.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
@@ -186,7 +119,7 @@ namespace biobase.API.Controllers
             try
             {
                 var eu_species = await _euTaxaRepository.GetEuTaxaAsync(directive);
-                var euSpeciesDto = _mapper.Map<List<EuTaxaDto>>(directive);
+                var euSpeciesDto = _mapper.Map<List<EuTaxaDto>>(eu_species);
 
                 if (format.ToLower() == "json")
                 {
@@ -209,41 +142,35 @@ namespace biobase.API.Controllers
             }
         }
 
-
-        [HttpGet("habitatTaxa")]
+        /// <summary>
+        /// Retrieves a list of all taxa groups
+        /// </summary>
+        /// <param name="format">
+        /// The format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
+        [HttpGet("taxaGroup")]
         [SwaggerOperation(
-            Tags = new[] { "2.3 Associated taxa per habitat class" },
-            Summary = "Get Habitat-Taxa data", Description = "Retrieve a habitat class and the associated taxon (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
-        [SwaggerResponse(200, "The data was successfully retrieved.")]
-        [SwaggerResponse(401, "API Key is missing or invalid.")]
-        [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
+            Tags = new[] { "3.3 Taxa groups" },
+            Summary = "Get all taxa groups", Description = "Retrieve a list of all taxa groups.\nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
+        [SwaggerResponse(200, "The list of taxa groups was successfully retrieved.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
-        public async Task<IActionResult> GetFiltered(
-            [FromQuery] string? habitatClassification, [FromQuery] string? habitatCode,
-            [FromQuery] string? taxonCategory, [FromQuery] string? threatStatus, [FromQuery] string? taxaGroup,
+        public async Task<IActionResult> GetTaxaGroupsAsync(
             [FromQuery] string format = "csv")
         {
             try
             {
-                // Ensure at least one filter is provided
-                if (string.IsNullOrEmpty(habitatClassification) && string.IsNullOrEmpty(habitatCode) &&
-                    string.IsNullOrEmpty(taxonCategory) && string.IsNullOrEmpty(threatStatus) &&
-                    string.IsNullOrEmpty(taxaGroup))
-                {
-                    return BadRequest("At least one filter must be specified.");
-                }
-
-                var habitatDomain = await _habitatTaxaRepository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxaGroup);
-                var habitatDto = _mapper.Map<List<HabitatTaxaDto>>(habitatDomain);
+                var taxaGroupsDomain = await _taxaGroupRepository.GetAllAsync();
+                var taxaGroupsDto = _mapper.Map<List<TaxaGroupsDto>>(taxaGroupsDomain);
 
                 if (format.ToLower() == "json")
                 {
-                    return Ok(habitatDto);
+                    return Ok(taxaGroupsDto);
                 }
                 else if (format.ToLower() == "csv")
                 {
-                    var csvData = await _csvExportService.ExportToCsvAsync(habitatDto);
-                    return File(csvData, "text/csv", $"traitbase_export_habitattaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    var csvData = await _csvExportService.ExportToCsvAsync(taxaGroupsDto);
+                    return File(csvData, "text/csv", $"traitbase_export_taxagroups_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
@@ -252,9 +179,10 @@ namespace biobase.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while getting all taxa.");
+                _logger.LogError(ex, "An error occurred while getting all taxa groups.");
                 return StatusCode(500, "An error occurred while processing your request.");
             }
+
         }
     }
 }

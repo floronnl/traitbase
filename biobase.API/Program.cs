@@ -95,11 +95,11 @@ builder.Services.AddDbContext<BiobaseDbContext>(options =>
 builder.Services.AddScoped<IHabitatClassesRepository, SQLHabitatClassesRepository>();
 builder.Services.AddScoped<IEuHabitatClassesRepository, SQLEuHabitatClassesRepository>();
 
+builder.Services.AddScoped<IHabitatTaxaRepository, SQLHabitatTaxaRepository>();
+builder.Services.AddScoped<IEuHabitatTaxaRepository, SQLEuHabitatTaxaRepository>();
+
 builder.Services.AddScoped<ITaxaGroupRepository, SQLTaxaGroupRepository>();
 builder.Services.AddScoped<ITaxaRepository, SQLTaxaRepository>();
-
-builder.Services.AddScoped<IHabitatTaxaRepository, SQLHabitatTaxaRepository>();
-
 
 builder.Services.AddScoped<ITraitsRepository>(sp => new SQLTraitsRepository(connectionString));
 builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepository>();

@@ -19,12 +19,14 @@ namespace biobase.API.Data
         public DbSet<HabitatClasses> habitat_classes { get; set; }
         public DbSet<EuHabitatClasses> eu_habitat_classes { get; set; }
 
-        public DbSet<Taxa> taxa { get; set; }
+        public DbSet<HabitatTaxa> habitat_taxa { get; set; }
+        public DbSet<EuHabitatTaxa> eu_habitat_taxa { get; set; }
+
         public DbSet<TaxaGroups> taxa_groups { get; set; }
+        public DbSet<Taxa> taxa { get; set; }
         public DbSet<EuTaxa> eu_bhd_species { get; set; }
 
-        public DbSet<HabitatTaxa> habitat_taxa { get; set; }
-
+ 
         public DbSet<TraitsCategories> traits_categories { get; set; }
 
         public DbSet<User> authentication { get; set; }
@@ -65,7 +67,11 @@ namespace biobase.API.Data
 
             modelBuilder.Entity<EuHabitatClasses>()
                 .HasNoKey();
+
             modelBuilder.Entity<EuTaxa>()
+                .HasNoKey();
+
+            modelBuilder.Entity<EuHabitatTaxa>()
                 .HasNoKey();
         }
     }
