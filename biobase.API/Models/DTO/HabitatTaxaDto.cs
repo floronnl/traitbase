@@ -1,7 +1,7 @@
 ﻿
 namespace biobase.API.Models.DTO
 {
-    public class HabitatClassesTaxaDto
+    public class HabitatTaxaDto
     {
         public string HabitatClassification { get; set; }
         public string? HabitatCode { get; set; }

@@ -12,6 +12,7 @@ using biobase.API.Middleware;
 using biobase.API.Repositories;
 using biobase.API.Services;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Pkix;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Reflection;
 using System.Text.Json;
@@ -91,13 +92,20 @@ builder.Services.AddDbContext<BiobaseDbContext>(options =>
     options.UseMySQL(connectionString));
 
 // Dependency Injection for Repositories and Services
-builder.Services.AddScoped<ITaxaRepository, SQLTaxaRepository>();
-builder.Services.AddScoped<ITraitsRepository>(sp => new SQLTraitsRepository(connectionString));
-builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepository>();
-builder.Services.AddScoped<ICsvExportService, CsvExportService>();
-builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IHabitatClassesRepository, SQLHabitatClassesRepository>();
 builder.Services.AddScoped<IEuHabitatClassesRepository, SQLEuHabitatClassesRepository>();
+
+builder.Services.AddScoped<ITaxaGroupRepository, SQLTaxaGroupRepository>();
+builder.Services.AddScoped<ITaxaRepository, SQLTaxaRepository>();
+
+builder.Services.AddScoped<IHabitatTaxaRepository, SQLHabitatTaxaRepository>();
+
+
+builder.Services.AddScoped<ITraitsRepository>(sp => new SQLTraitsRepository(connectionString));
+builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepository>();
+
+builder.Services.AddScoped<ICsvExportService, CsvExportService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Registering MVC Controllers
 builder.Services.AddControllers()

@@ -8,7 +8,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace biobase.API.Controllers
 {
     [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/habitatClasses")]
+    [Route("api")]
     [ApiController]
     public class HabitatClassesController : ControllerBase
     {
@@ -41,12 +41,11 @@ namespace biobase.API.Controllers
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable response containing the habitat classes.</returns>
-        [HttpGet("getHabitatClasses")]
+        [HttpGet("habitatClasses")]
         [SwaggerOperation(
             Tags = new[] { "1.1 Habitat classes" },
             Summary = "Get habitat classes data", Description = "Retrieve a list of all habitat classes with an optional filter for a specific classification.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
-        [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetHabitatClasses(
@@ -79,7 +78,7 @@ namespace biobase.API.Controllers
             }
         }
 
-        [HttpGet("getEuHabitatClasses")]
+        [HttpGet("euHabitatClasses")]
         [SwaggerOperation(
     Tags = new[] { "1.2 EU Habitat classes" },
     Summary = "Get EU habitat classes data",

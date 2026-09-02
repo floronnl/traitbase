@@ -1,7 +1,7 @@
 ﻿
 namespace biobase.API.Models.Domain
 {
-    public class HabitatClassesTaxa
+    public class HabitatTaxa
     {
         public string habitat_classification { get; set; }
         public string? habitat_code { get; set; }

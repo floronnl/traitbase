@@ -17,6 +17,7 @@ namespace biobase.API.Controllers
     {
         private readonly ITaxaGroupRepository _taxaGroupRepository;
         private readonly ITaxaRepository _taxaRepository;
+        private readonly IEuTaxaRepository _euTaxaRepository;
         private readonly IHabitatTaxaRepository _habitatTaxaRepository;
         private readonly IMapper _mapper;
         private readonly ICsvExportService _csvExportService;
@@ -24,7 +25,8 @@ namespace biobase.API.Controllers
 
         public TaxaController(
             ITaxaGroupRepository taxaGroupRepository,
-            ITaxaRepository taxaRepository, 
+            ITaxaRepository taxaRepository,
+            IEuTaxaRepository euTaxaRepository,
             IHabitatTaxaRepository habitatTaxaRepository,
             IMapper mapper, 
             ICsvExportService csvExportService, 
@@ -32,6 +34,7 @@ namespace biobase.API.Controllers
             ) {
             _taxaGroupRepository = taxaGroupRepository;
             _taxaRepository = taxaRepository;
+            _euTaxaRepository = euTaxaRepository;
             _habitatTaxaRepository = habitatTaxaRepository;
             _mapper = mapper;
             _csvExportService = csvExportService;
@@ -44,12 +47,11 @@ namespace biobase.API.Controllers
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet("taxaGroup/getTaxaGroups")]
+        [HttpGet("taxaGroup")]
         [SwaggerOperation(
             Tags = new[] { "2.1 Taxa groups" },
             Summary = "Get all taxa groups", Description = "Retrieve a list of all taxa groups.\nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of taxa groups was successfully retrieved.")]
-        [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetTaxaGroupsAsync(
             [FromQuery] string format = "csv")
@@ -97,12 +99,11 @@ namespace biobase.API.Controllers
         /// The format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the taxa data.</returns>
-        [HttpGet("taxa/getTaxa")]
+        [HttpGet("taxa")]
         [SwaggerOperation(
             Tags = new[] { "2.2 Taxa" },
             Summary = "Get all taxa", Description = "Retrieve a list of all taxa, optionally filtered by red list status or taxa group.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of taxa was successfully retrieved.")]
-        [SwaggerResponse(401, "API Key is missing or invalid.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
         public async Task<IActionResult> GetTaxaAsync(
             [FromQuery] string? taxaGroup,
@@ -159,7 +160,57 @@ namespace biobase.API.Controllers
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable CSV file or JSON response containing the habitat data.</returns>
-        [HttpGet("habitatTaxa/getHabitatTaxa")]
+
+
+        /// <summary>
+        /// Retrieves data on EU Directive species
+        /// </summary>
+        /// <param name="directive">
+        /// Optional filter for directive: 'BD', or 'HD'.
+        /// </param>
+        /// <param name="format">
+        /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable response containing the EU-directive species.</returns>
+        [HttpGet("euSpecies")]
+        [SwaggerOperation(
+            Tags = new[] { "2.4 EU Directive species" },
+            Summary = "Get EU species data", Description = "Retrieve a list of all EU-species with an optional filter for a specific directive.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
+        [SwaggerResponse(200, "The data was successfully retrieved.")]
+        [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
+        [SwaggerResponse(500, "An error occurred while processing your request.")]
+        public async Task<IActionResult> GetEuSpecies(
+            [FromQuery] string? directive,
+            [FromQuery] string format = "csv")
+        {
+            try
+            {
+                var eu_species = await _euTaxaRepository.GetEuTaxaAsync(directive);
+                var euSpeciesDto = _mapper.Map<List<EuTaxaDto>>(directive);
+
+                if (format.ToLower() == "json")
+                {
+                    return Ok(euSpeciesDto);
+                }
+                else if (format.ToLower() == "csv")
+                {
+                    var csvData = await _csvExportService.ExportToCsvAsync(euSpeciesDto);
+                    return File(csvData, "text/csv", $"traitbase_export_EUspecies_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                }
+                else
+                {
+                    return BadRequest("Unsupported format. Please use 'csv' or 'json'.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while getting EU species.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
+
+
+        [HttpGet("habitatTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.3 Associated taxa per habitat class" },
             Summary = "Get Habitat-Taxa data", Description = "Retrieve a habitat class and the associated taxon (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
@@ -183,7 +234,7 @@ namespace biobase.API.Controllers
                 }
 
                 var habitatDomain = await _habitatTaxaRepository.GetHabitatTaxaAsync(habitatClassification, habitatCode, taxonCategory, threatStatus, taxaGroup);
-                var habitatDto = _mapper.Map<List<HabitatClassesTaxaDto>>(habitatDomain);
+                var habitatDto = _mapper.Map<List<HabitatTaxaDto>>(habitatDomain);
 
                 if (format.ToLower() == "json")
                 {

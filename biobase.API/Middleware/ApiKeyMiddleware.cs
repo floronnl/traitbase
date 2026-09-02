@@ -38,12 +38,13 @@ namespace biobase.API.Middleware
         {
             // Bypass API key validation for Taxa endpoints (public)
             if (
-                context.Request.Path.StartsWithSegments("/api/taxaGroup", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/taxa", StringComparison.OrdinalIgnoreCase) || 
-                context.Request.Path.StartsWithSegments("/api/traits/traitsPivot", StringComparison.OrdinalIgnoreCase) ||
                 context.Request.Path.StartsWithSegments("/api/habitatClasses", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/habitatTaxa/getHabitatTaxa", StringComparison.OrdinalIgnoreCase)
-              //  context.Request.Path.StartsWithSegments(
+                context.Request.Path.StartsWithSegments("/api/euHabitatClasses", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/taxaGroup", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/taxa", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/euSpecies", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/traits/traitsPivot", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/habitatTaxa", StringComparison.OrdinalIgnoreCase)
                 )
             {
                 await _next(context); // Skip API key validation for Taxa and Pivot table endpoints

@@ -15,28 +15,33 @@ namespace biobase.API.Data
         /// <summary>
         /// Gets the tables from the MySQL database.
         /// </summary>
+        /// 
+        public DbSet<HabitatClasses> habitat_classes { get; set; }
+        public DbSet<EuHabitatClasses> eu_habitat_classes { get; set; }
+
         public DbSet<Taxa> taxa { get; set; }
         public DbSet<TaxaGroups> taxa_groups { get; set; }
+        public DbSet<EuTaxa> eu_bhd_species { get; set; }
+
+        public DbSet<HabitatTaxa> habitat_taxa { get; set; }
+
         public DbSet<TraitsCategories> traits_categories { get; set; }
-        public DbSet<HabitatClasses> habitat_classes { get; set; }
-        public DbSet<HabitatClassesTaxa> habitat_classes_taxa { get; set; }
-        public DbSet<EuHabitatClasses> eu_habitat_classes { get; set; }
 
         public DbSet<User> authentication { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<HabitatClassesTaxa>()
+            modelBuilder.Entity<HabitatTaxa>()
                 .HasNoKey()
                 .HasIndex(h => h.taxon_category);
 
-            modelBuilder.Entity<HabitatClassesTaxa>()
+            modelBuilder.Entity<HabitatTaxa>()
                 .HasIndex(h => h.habitat_code);
 
-            modelBuilder.Entity<HabitatClassesTaxa>()
+            modelBuilder.Entity<HabitatTaxa>()
                 .HasIndex(h => h.rl);
 
-            modelBuilder.Entity<HabitatClassesTaxa>()
+            modelBuilder.Entity<HabitatTaxa>()
                 .HasIndex(h => h.soortgroep);
 
 
@@ -59,6 +64,8 @@ namespace biobase.API.Data
                 .HasNoKey();
 
             modelBuilder.Entity<EuHabitatClasses>()
+                .HasNoKey();
+            modelBuilder.Entity<EuTaxa>()
                 .HasNoKey();
         }
     }
