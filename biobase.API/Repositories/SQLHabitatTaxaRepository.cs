@@ -21,7 +21,7 @@ namespace biobase.API.Repositories
             string? soortgroep = null
             ) {
 
-            var query = _dbContext.habitat_taxa.AsQueryable();
+            var query = _dbContext.habitat_classes_taxa.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(habitat_classification))
             {

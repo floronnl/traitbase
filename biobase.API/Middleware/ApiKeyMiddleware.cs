@@ -40,11 +40,11 @@ namespace biobase.API.Middleware
             if (
                 context.Request.Path.StartsWithSegments("/api/habitatClasses", StringComparison.OrdinalIgnoreCase) ||
                 context.Request.Path.StartsWithSegments("/api/euHabitatClasses", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/euHabitatTaxa", StringComparison.OrdinalIgnoreCase) ||
                 context.Request.Path.StartsWithSegments("/api/taxaGroup", StringComparison.OrdinalIgnoreCase) ||
                 context.Request.Path.StartsWithSegments("/api/taxa", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/euSpecies", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/traits/traitsPivot", StringComparison.OrdinalIgnoreCase) ||
-                context.Request.Path.StartsWithSegments("/api/habitatTaxa", StringComparison.OrdinalIgnoreCase)
+                context.Request.Path.StartsWithSegments("/api/euTaxa", StringComparison.OrdinalIgnoreCase) ||
+                context.Request.Path.StartsWithSegments("/api/traits/traitsPivot", StringComparison.OrdinalIgnoreCase)
                 )
             {
                 await _next(context); // Skip API key validation for Taxa and Pivot table endpoints

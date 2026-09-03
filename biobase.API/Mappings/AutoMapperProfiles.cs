@@ -2,7 +2,6 @@
 using AutoMapper;
 using biobase.API.Models.Domain;
 using biobase.API.Models.DTO;
-using System.Xml.Linq;
 
 namespace biobase.API.Mappings
 {

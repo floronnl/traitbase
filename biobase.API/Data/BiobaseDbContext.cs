@@ -19,7 +19,7 @@ namespace biobase.API.Data
         public DbSet<HabitatClasses> habitat_classes { get; set; }
         public DbSet<EuHabitatClasses> eu_habitat_classes { get; set; }
 
-        public DbSet<HabitatTaxa> habitat_taxa { get; set; }
+        public DbSet<HabitatTaxa> habitat_classes_taxa { get; set; }
         public DbSet<EuHabitatTaxa> eu_habitat_taxa { get; set; }
 
         public DbSet<TaxaGroups> taxa_groups { get; set; }

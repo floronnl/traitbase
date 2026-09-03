@@ -7,11 +7,11 @@ namespace biobase.API.Models.Domain
         [Key]
         public int soortnummer { get; set; }
         public string? groep { get; set; }
-        public string? wetnaam { get; set; }
+        public string wetnaam { get; set; }
         public string? nednaam { get; set; }
         public string? familie { get; set; }
         public string? label { get; set; }
-        public string? identity { get; set; }
+        public string identity { get; set; }
         public string? habitatrichtlijn { get; set; }
         public string? rl { get; set; }
         public string? zzz { get; set; }

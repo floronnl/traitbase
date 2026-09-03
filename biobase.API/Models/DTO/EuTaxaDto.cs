@@ -3,9 +3,9 @@
     public class EuTaxaDto
     {
         public string EuSpeciesCode { get; set; }
-        public string TaxonId { get; set; }
-        public string VernacularName { get; set; }
-        public string ScientificName { get; set; }
+        public string? TaxonId { get; set; }
+        public string? VernacularName { get; set; }
+        public string? ScientificName { get; set; }
         public string ScientificNameArt17 { get; set; }
         public string ScientificNameHdBd { get; set; }
         public string Directive { get; set; }
@@ -16,6 +16,6 @@
         public string TaxaGroup { get; set; }
         public string Occurrence { get; set; }
         public string? Season { get; set; }
-        public string NdffIdentity { get; set; }
+        public string? NdffIdentity { get; set; }
     }
 }

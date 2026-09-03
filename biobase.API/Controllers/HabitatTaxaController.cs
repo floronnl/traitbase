@@ -68,7 +68,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(habitatDto);
-                    return File(csvData, "text/csv", $"traitbase_export_habitattaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"Traitbase_export_HabitatTaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
@@ -85,11 +85,12 @@ namespace biobase.API.Controllers
         [HttpGet("euHabitatTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.2 Associated taxa per EU habitat class" },
-            Summary = "Get EU Habitat-Taxa data", Description = "Retrieve a habitat class and the associated taxon (or vice versa).  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
+            Summary = "Get EU Habitat-Taxa data", 
+            Description = "Retrieve a habitat class and the associated taxon (or vice versa).\nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
-        public async Task<IActionResult> GetFiltered(
+        public async Task<IActionResult> GetEuHabitatTaxa(
             [FromQuery] string? habitatCode,
             [FromQuery] string? taxaGroup,
             [FromQuery] string format = "csv")
@@ -105,7 +106,7 @@ namespace biobase.API.Controllers
             else if (format.ToLower() == "csv")
             {
                 var csvData = await _csvExportService.ExportToCsvAsync(euHabitatTaxaDto);
-                return File(csvData, "text/csv", $"traitbase_export_EU_HabitatTaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                return File(csvData, "text/csv", $"Traitbase_export_EU_HabitatTaxa_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
             }
             else
             {

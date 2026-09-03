@@ -5,6 +5,7 @@ namespace biobase.API.Repositories
     public interface IEuHabitatTaxaRepository
     {
         Task<List<EuHabitatTaxa>> GetEuHabitatTaxaAsync(
-        string? habitatCode = null, string? taxaGroup = null);
+        string? habitatCode = null, 
+        string? taxaGroup = null);
     }
 }

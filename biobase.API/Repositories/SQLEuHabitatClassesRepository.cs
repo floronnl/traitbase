@@ -7,7 +7,6 @@ namespace biobase.API.Repositories
     public class SQLEuHabitatClassesRepository : IEuHabitatClassesRepository
     {
         private readonly BiobaseDbContext _dbContext;
-        private readonly ILogger<SQLEuHabitatClassesRepository> _logger;
 
         public SQLEuHabitatClassesRepository(BiobaseDbContext dbContext)
         {

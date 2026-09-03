@@ -100,6 +100,7 @@ builder.Services.AddScoped<IEuHabitatTaxaRepository, SQLEuHabitatTaxaRepository>
 
 builder.Services.AddScoped<ITaxaGroupRepository, SQLTaxaGroupRepository>();
 builder.Services.AddScoped<ITaxaRepository, SQLTaxaRepository>();
+builder.Services.AddScoped<IEuTaxaRepository, SQLEuTaxaRepository>();
 
 builder.Services.AddScoped<ITraitsRepository>(sp => new SQLTraitsRepository(connectionString));
 builder.Services.AddScoped<ITraitsCategoriesRepository, SQLTraitsCategoriesRepository>();

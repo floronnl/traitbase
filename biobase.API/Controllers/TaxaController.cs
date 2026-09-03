@@ -27,7 +27,6 @@ namespace biobase.API.Controllers
             ITaxaGroupRepository taxaGroupRepository,
             ITaxaRepository taxaRepository,
             IEuTaxaRepository euTaxaRepository,
-            IHabitatTaxaRepository habitatTaxaRepository,
             IMapper mapper, 
             ICsvExportService csvExportService, 
             ILogger<TaxaController> logger
@@ -35,7 +34,6 @@ namespace biobase.API.Controllers
             _taxaGroupRepository = taxaGroupRepository;
             _taxaRepository = taxaRepository;
             _euTaxaRepository = euTaxaRepository;
-            _habitatTaxaRepository = habitatTaxaRepository;
             _mapper = mapper;
             _csvExportService = csvExportService;
             _logger = logger;
@@ -96,7 +94,7 @@ namespace biobase.API.Controllers
         }
 
         /// <summary>
-        /// Retrieves data on EU Directive species
+        /// Retrieves data on EU Directive Taxa
         /// </summary>
         /// <param name="directive">
         /// Optional filter for directive: 'BD', or 'HD'.
@@ -105,10 +103,10 @@ namespace biobase.API.Controllers
         /// Specify format in which to return the data, either "csv" or "json". Default is "csv".
         /// </param>
         /// <returns>A downloadable response containing the EU-directive species.</returns>
-        [HttpGet("euSpecies")]
+        [HttpGet("euTaxa")]
         [SwaggerOperation(
-            Tags = new[] { "3.2 EU Directive species" },
-            Summary = "Get EU species data", Description = "Retrieve a list of all EU-species with an optional filter for a specific directive.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
+            Tags = new[] { "3.2 EU Directive Taxa" },
+            Summary = "Get EU taxa data", Description = "Retrieve a list of all EU-taxa with an optional filter for a specific directive.  \nNo API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The data was successfully retrieved.")]
         [SwaggerResponse(404, "Query unsuccesfull. Please double check the filters-input.")]
         [SwaggerResponse(500, "An error occurred while processing your request.")]
@@ -128,7 +126,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(euSpeciesDto);
-                    return File(csvData, "text/csv", $"traitbase_export_EUspecies_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"Traitbase_export_EUspecies_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
@@ -170,7 +168,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(taxaGroupsDto);
-                    return File(csvData, "text/csv", $"traitbase_export_taxagroups_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"Traitbase_export_TaxaGroups_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {

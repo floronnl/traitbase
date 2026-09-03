@@ -64,7 +64,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(habitatDto);
-                    return File(csvData, "text/csv", $"traitbase_export_habitatclasses_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"Traitbase_export_HabitatClasses_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
@@ -101,7 +101,7 @@ namespace biobase.API.Controllers
                 else if (format.ToLower() == "csv")
                 {
                     var csvData = await _csvExportService.ExportToCsvAsync(dto);
-                    return File(csvData, "text/csv", $"traitbase_export_EUhabitatclasses_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
+                    return File(csvData, "text/csv", $"Traitbase_export_EU_HabitatClasses_{DateTime.Now:yyyy-MM-dd-HHmm}.csv");
                 }
                 else
                 {
