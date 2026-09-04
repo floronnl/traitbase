@@ -42,7 +42,7 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable CSV file or JSON response containing the traitsCategories data.</returns>
         [HttpGet]
         [SwaggerOperation(
-            Tags = new[] { "3. Traits categories" }, 
+            Tags = new[] { "4.1 Traits categories" }, 
             Summary = "Traits categories for a taxa group", Description = "Retrieve a list of all traits categories for a specific taxa group.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON. ")]
         [SwaggerResponse(200, "The list of traits categories was successfully retrieved.")]
         [SwaggerResponse(401, "API Key is missing or invalid.")]

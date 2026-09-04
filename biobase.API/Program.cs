@@ -12,14 +12,11 @@ using biobase.API.Middleware;
 using biobase.API.Repositories;
 using biobase.API.Services;
 using Microsoft.EntityFrameworkCore;
-using Org.BouncyCastle.Pkix;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Reflection;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container
 
 // Add Endpoints API Explorer for discovering and exposing APIs
 builder.Services.AddEndpointsApiExplorer();

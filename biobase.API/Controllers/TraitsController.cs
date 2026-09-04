@@ -40,7 +40,7 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable CSV file or JSON response containing the traits data.</returns>
         [HttpGet("traitsSingleTaxon")]
         [SwaggerOperation(
-            Tags = new[] { "4.1 Traits - single taxon" },
+            Tags = new[] { "4.2 Traits - single taxon" },
             Summary = "Get all traits for a single taxon",
             Description = "Retrieve a list of all traits for a single taxon.  \nA valid API key is required to access this endpoint. The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of traits was successfully retrieved.")]
@@ -95,7 +95,7 @@ namespace biobase.API.Controllers
         /// <returns>A downloadable CSV file or JSON response containing the traits data.</returns>
         [HttpGet("traitsPivot")]
         [SwaggerOperation(
-            Tags = new[] { "4.2 Traits table for plants, mosses, lichens, and stoneworts" },
+            Tags = new[] { "4.3 Traits table for plants, mosses, lichens, and stoneworts" },
             Summary = "Get a pivot table with traits for all vascular plants, mosses, lichens, and stoneworts",
             Description = "Retrieve a table with all traits for vascular plants, mosses, lichens, and stoneworts.  \nNo API key is required to access this endpoint.The response format can be CSV or JSON.")]
         [SwaggerResponse(200, "The list of traits was successfully retrieved.")]

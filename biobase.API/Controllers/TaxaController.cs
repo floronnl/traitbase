@@ -18,7 +18,6 @@ namespace biobase.API.Controllers
         private readonly ITaxaGroupRepository _taxaGroupRepository;
         private readonly ITaxaRepository _taxaRepository;
         private readonly IEuTaxaRepository _euTaxaRepository;
-        private readonly IHabitatTaxaRepository _habitatTaxaRepository;
         private readonly IMapper _mapper;
         private readonly ICsvExportService _csvExportService;
         private readonly ILogger<TaxaController> _logger;
