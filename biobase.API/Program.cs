@@ -113,7 +113,7 @@ builder.Services.AddControllers()
     });
 
 // Registering AutoMapper profiles for object mapping
-builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
+builder.Services.AddAutoMapper(cfg => { }, typeof(AutoMapperProfiles));
 
 // Register console logging for diagnostics
 builder.Logging.AddConsole();
