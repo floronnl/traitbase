@@ -12,10 +12,16 @@
         public string? AnnexII { get; set; }
         public string? AnnexIV { get; set; }
         public string? AnnexV { get; set; }
+        public string? NonAnnexISpaTrigger { get; set; }
+        public string? AnnexI { get; set; }
+        public string? AnnexIIPartA { get; set; }
+        public string? AnnexIIPartB { get; set; }
         public string? Priority { get; set; }
         public string TaxaGroup { get; set; }
         public string Occurrence { get; set; }
+        public string? KeyWintering { get; set; }
         public string? Season { get; set; }
+        public string? NonNative { get; set; }
         public string NdffIdentity { get; set; }
     }
 }

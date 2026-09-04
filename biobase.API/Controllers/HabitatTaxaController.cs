@@ -8,7 +8,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace biobase.API.Controllers
 {
     /// <summary>
-    /// Controller to handle API requests for Taxa. Provides endpoints to retrieve and export taxa data as CSV or JSON files.
+    /// Controller to handle API requests for Habitat-Taxa. Provides endpoints to retrieve and export taxa data as CSV or JSON files.
     /// </summary>
     [ApiExplorerSettings(GroupName = "v1")]
     [Route("api")]
@@ -35,6 +35,29 @@ namespace biobase.API.Controllers
             _csvExportService = csvExportService;
             _logger = logger;
         }
+
+        /// <summary>
+        /// Retrieves a list of all associated taxa per habitat, with an optional filter by habitat classification, habitat code, taxon category, threat status, or taxa group. Please not that at least one filter must be specified. If no filters are provided, a BadRequest response will be returned.
+        /// </summary>
+        /// <param name="habitatClassification">
+        /// Optional filter to retrieve data for a specific habitat classification, for example 'basiskwaliteitnatuur' or 'natuurdoeltype'.
+        /// </param>
+        /// <param name="habitatCode">
+        /// Optional filter to retrieve data for a specific habitat code, for example 'landelijk_rivierenlandschap' or '2.1'.
+        /// </param>
+        /// <param name="taxonCategory">
+        /// Optional filter to retrieve data for a specific taxon category, for example 'basiskwaliteitnatuur' or 'doelsoort'.
+        /// </param>
+        /// <param name="taxaGroup">
+        /// Optional filter for taxa group. Use Dutch names like 'Vaatplanten' or 'Reptielen'. If not provided, all taxa groups will be returned.
+        /// </param>
+        /// <param name="threatStatus">
+        /// Optional filter for threat status. Use the Dutch abbreviations, for example 'BE' or 'KW'
+        /// </param>
+        /// <param name="format">
+        /// The format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable CSV file or JSON response containing the filtered habitat-taxa data.</returns>
         [HttpGet("habitatTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.1 Associated taxa per habitat class" },
@@ -82,6 +105,19 @@ namespace biobase.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Retrieves a list of all associated taxa per EU habitat class, with an optional filter by directive (Bird or Habitat Directive).
+        /// </summary>
+        /// <param name="habitatCode">
+        /// Optional filter to retrieve all taxa for a specific habitat code, for example 'H2330' or 'H1160'.
+        /// </param>
+        /// <param name="taxaGroup">
+        /// Optional filter to retrieve data for a specific taxa group. Use Dutch names like 'Vogels' or 'Mossen'.
+        /// </param>
+        /// <param name="format">
+        /// The format in which to return the data, either "csv" or "json". Default is "csv".
+        /// </param>
+        /// <returns>A downloadable CSV file or JSON response containing the filtered EU habitat-taxa data.</returns>
         [HttpGet("euHabitatTaxa")]
         [SwaggerOperation(
             Tags = new[] { "2.2 Associated taxa per EU habitat class" },

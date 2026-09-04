@@ -4,7 +4,6 @@ using biobase.API.Repositories;
 using biobase.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
-using System.ComponentModel.DataAnnotations;
 
 namespace biobase.API.Controllers
 {

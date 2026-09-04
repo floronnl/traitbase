@@ -80,12 +80,17 @@ namespace biobase.API.Mappings
                 .ForMember(dest => dest.AnnexII, opt => opt.MapFrom(src => src.annex_ii))
                 .ForMember(dest => dest.AnnexIV, opt => opt.MapFrom(src => src.annex_iv))
                 .ForMember(dest => dest.AnnexV, opt => opt.MapFrom(src => src.annex_v))
+                .ForMember(dest => dest.NonAnnexISpaTrigger, opt => opt.MapFrom(src => src.non_annex_i_spa_trigger))
+                .ForMember(dest => dest.AnnexI, opt => opt.MapFrom(src => src.annex_i))
+                .ForMember(dest => dest.AnnexIIPartA, opt => opt.MapFrom(src => src.annex_ii_parta))
+                .ForMember(dest => dest.AnnexIIPartB, opt => opt.MapFrom(src => src.annex_ii_partb))
                 .ForMember(dest => dest.Priority, opt => opt.MapFrom(src => src.priority))
                 .ForMember(dest => dest.TaxaGroup, opt => opt.MapFrom(src => src.taxa_group))
                 .ForMember(dest => dest.Occurrence, opt => opt.MapFrom(source => source.occurrence))
+                .ForMember(dest => dest.KeyWintering, opt => opt.MapFrom(source => source.keywintering))
                 .ForMember(dest => dest.Season, opt => opt.MapFrom(source => source.season))
+                .ForMember(dest => dest.NonNative, opt => opt.MapFrom(source => source.non_native))
                 .ForMember(dest => dest.NdffIdentity, opt => opt.MapFrom(source => source.ndff_uri));
-
 
             // TRAITS CATEGORIES
             CreateMap<TraitsCategories, TraitsCategoriesDto>()
