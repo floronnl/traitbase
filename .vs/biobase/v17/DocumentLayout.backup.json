@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\traitbase\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\models\\domain\\taxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\domain\\taxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\mappings\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\models\\domain\\eutaxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\domain\\eutaxa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\models\\dto\\eutaxadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|solutionrelative:biobase.api\\models\\dto\\eutaxadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7F83451-30AA-44CA-9D92-A1C779A864D5}|biobase.API\\biobase.API.csproj|d:\\traitbase\\biobase.api\\data\\biobasedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,19 +43,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Taxa.cs",
+              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Models\\Domain\\Taxa.cs",
+              "RelativeDocumentMoniker": "biobase.API\\Models\\Domain\\Taxa.cs",
+              "ToolTip": "D:\\traitbase\\biobase.API\\Models\\Domain\\Taxa.cs",
+              "RelativeToolTip": "biobase.API\\Models\\Domain\\Taxa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T11:59:09.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\traitbase\\biobase.API\\Program.cs",
               "RelativeDocumentMoniker": "biobase.API\\Program.cs",
               "ToolTip": "D:\\traitbase\\biobase.API\\Program.cs",
               "RelativeToolTip": "biobase.API\\Program.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAmwHYAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T12:19:50.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-04T12:19:50.95Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "BiobaseDbContext.cs",
               "DocumentMoniker": "D:\\traitbase\\biobase.API\\Data\\BiobaseDbContext.cs",
               "RelativeDocumentMoniker": "biobase.API\\Data\\BiobaseDbContext.cs",
@@ -71,47 +75,7 @@
               "RelativeToolTip": "biobase.API\\Data\\BiobaseDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T12:10:28.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AutoMapperProfiles.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "RelativeToolTip": "biobase.API\\Mappings\\AutoMapperProfiles.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwE0AAABbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T12:06:51.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EuTaxa.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Models\\Domain\\EuTaxa.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Models\\Domain\\EuTaxa.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Models\\Domain\\EuTaxa.cs",
-              "RelativeToolTip": "biobase.API\\Models\\Domain\\EuTaxa.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA5wA8AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T12:02:17.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EuTaxaDto.cs",
-              "DocumentMoniker": "D:\\traitbase\\biobase.API\\Models\\DTO\\EuTaxaDto.cs",
-              "RelativeDocumentMoniker": "biobase.API\\Models\\DTO\\EuTaxaDto.cs",
-              "ToolTip": "D:\\traitbase\\biobase.API\\Models\\DTO\\EuTaxaDto.cs",
-              "RelativeToolTip": "biobase.API\\Models\\DTO\\EuTaxaDto.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowBcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-04T11:33:26.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-04T12:10:28.97Z"
             }
           ]
         }

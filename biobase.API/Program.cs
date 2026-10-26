@@ -3,7 +3,7 @@
 // 0. appSettings.Development.json moet gelijk zijn aan appSettings.json
 // 1. Build -> Build Biobase.API   (CTRL+B)
 // 2. Build -> Publish Biobase.API
-// 3. Bestandsmap bin/release/net8.0/publish kopieren naar server root folder
+// 3. Bestandsmap bin/release/net8.0/publish kopieren naar gedeelde map/Biobase en dan server root folder
 // 
 
 using biobase.API.Data;
@@ -113,7 +113,9 @@ builder.Services.AddControllers()
     });
 
 // Registering AutoMapper profiles for object mapping
-builder.Services.AddAutoMapper(cfg => { }, typeof(AutoMapperProfiles));
+builder.Services.AddAutoMapper(cfg => { 
+    cfg.LicenseKey = builder.Configuration["AutoMapper:LicenseKey"];
+}, typeof(AutoMapperProfiles));
 
 // Register console logging for diagnostics
 builder.Logging.AddConsole();
